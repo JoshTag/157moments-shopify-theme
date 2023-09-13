@@ -99,6 +99,75 @@
   endfor
 -%}
 
+
+{% assign currentcollection = collection.title | handle %}
+{% if collection.title == "All/Women/Unisex" %}
+{% assign currentcollection = "all-womens-unisex"%}
+{% endif %}
+
+
+{% assign menuitemsMenswear = '' | split: '' %}
+{% for link in linklists.main-menu.links %}
+  {% if link.title == "Menswear" %}
+    {% for child_link in link.links %}
+      {% if child_link.links.size == 0 %}
+        {% assign menuItemName = child_link.url | handle | remove: "collections-"| split: ' ' %}
+        {% assign menuitemsMenswear = menuitemsMenswear | concat: menuItemName %}
+      {% endif %}
+      {% if child_link.links.size > 0 %}
+        {% for grandchild_link in child_link.links %}
+          {% assign menuItemName = grandchild_link.url | handle | remove: "collections-"| split: ' ' %}
+          {% assign menuitemsMenswear = menuitemsMenswear | concat: menuItemName %}
+        {% endfor %}
+      {% endif %}
+    {% endfor %}
+  {% endif %}
+{% endfor %}
+
+{% assign menuitemsWomenswear = '' | split: '' %}
+{% for link in linklists.main-menu.links %}
+  {% if link.title == "Womenswear" %}
+    {% for child_link in link.links %}
+      {% if child_link.links.size == 0 %}
+        {% assign menuItemName = child_link.url | handle | remove: "collections-"| split: ' ' %}
+        {% assign menuitemsWomenswear = menuitemsWomenswear | concat: menuItemName %}
+      {% endif %}
+      {% if child_link.links.size > 0 %}
+        {% for grandchild_link in child_link.links %}
+          {% assign menuItemName = grandchild_link.url | handle | remove: "collections-"| split: ' ' %}
+          {% assign menuitemsWomenswear = menuitemsWomenswear | concat: menuItemName %}
+        {% endfor %}
+      {% endif %}
+    {% endfor %}
+  {% endif %}
+{% endfor %}
+
+{% assign menuitemsHome = '' | split: '' %}
+{% for link in linklists.main-menu.links %}
+  {% if link.title == "Home" %}
+    {% for child_link in link.links %}
+      {% if child_link.links.size == 0 %}
+        {% assign menuItemName = child_link.url | handle | remove: "collections-"| split: ' ' %}
+        {% assign menuitemsHome = menuitemsHome | concat: menuItemName %}
+      {% endif %}
+      {% if child_link.links.size > 0 %}
+        {% for grandchild_link in child_link.links %}
+          {% assign menuItemName = grandchild_link.url | handle | remove: "collections-"| split: ' ' %}
+          {% assign menuitemsHome = menuitemsHome | concat: menuItemName %}
+        {% endfor %}
+      {% endif %}
+    {% endfor %}
+  {% endif %}
+{% endfor %}
+
+{% if menuitemsMenswear contains currentcollection %}
+  {% assign collection_menu = "Menswear" %}
+{% elsif menuitemsWomenswear contains currentcollection %}
+  {% assign collection_menu = "Womenswear" %}
+{% elsif menuitemsHome contains currentcollection %}
+    {% assign collection_menu = "Home" %}
+{% endif %}
+
 {%- if show_marquee and marquee_position == 'top' -%}
 <section class="border-t-grid border-grid-color" {{ marquee_shopify_attributes }}>
   {% render 'marquee' with
@@ -115,7 +184,24 @@
 </section>
 {%- endif -%}
 {% paginate collection.products by product_limit %}
-  <section id="main-collection-product-grid" data-id="{{ section.id }}" class="bg-scheme-background text-scheme-text collection border-t-grid border-theme-color transition-opacity duration-200 ease-in-out" data-section-type="collection" data-section-id="{{ section.id }}" x-data="ThemeSection_collection()" x-init="mounted()" data-color-scheme="{{ section_color }}">
+  <section id="main-collection-product-grid" data-id="{{ section.id }}" class="bg-scheme-background text-scheme-text collection border-t-grid border-theme-color transition-opacity duration-200 ease-in-out collection-page--side-menu" data-section-type="collection" data-section-id="{{ section.id }}" x-data="ThemeSection_collection()" x-init="mounted()" data-color-scheme="{{ section_color }}">
+  <div class="collection-page__menu">
+    {% for link in linklists.main-menu.links %}
+      {% if link.title == collection_menu %}
+        {% for child_link in link.links %}
+          <ul class="collection-page__menu-list">
+            <li class="collection-page__menu-list-item"><a href="{{ child_link.url }}">{{child_link.title}}</a></li>
+            {% if child_link.links.size > 0 %}
+              {% for grandchild_link in child_link.links %}
+                <li class="collection-page__menu-list-item"><a href="{{ grandchild_link.url }}">{{ grandchild_link.title }}</a></li>
+              {% endfor %}
+            {% endif %}
+          </ul>
+        {% endfor %}
+      {% endif %}
+    {% endfor %}
+  </div>
+  <div class="collection-page__grid">
     {%- if show_heading_container -%}
     <div class="grid grid-cols-1 lg:grid-cols-12 grid-flow-row-dense bg-border gap-gutter overflow-hidden border-b-grid border-theme-color">
       {% if show_image and collection.image %}
@@ -449,6 +535,7 @@
         <div class="rte">{{ collection.description }}</div>
       </div>
     {% endif %}
+    </div>
   </section>
 {% endpaginate %}
 
