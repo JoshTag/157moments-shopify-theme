@@ -548,6 +548,12 @@
                 block: block,
                 section_color: section_color
               %}
+            {%- when 'sizeguide' -%}
+              testeste
+              {% render 'product-block-size-guide',
+                block: block,
+                section_color: section_color
+              %}
             {%- when 'share_buttons' -%}
               <div class="mt-8" {{ block.shopify_attributes }}>
               {% render 'social-sharing', tag: 'h2', share_title: product.title, share_permalink: product.url, share_image: product, section_color: section_color %}

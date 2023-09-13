@@ -1,4 +1,5 @@
 /* Custom CSS Code */
+/* Collection Page Side Menu */
 .collection-page__menu {
   display: none;
 }
@@ -39,4 +40,15 @@
   .collection-page__grid {
     flex: 1 1 0;
   }
+}
+
+/* Size Guide Popup */
+.product-popup-modal--padding-10 {
+  padding: 10px;
+}
+
+.product-popup-modal__content-info--center-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

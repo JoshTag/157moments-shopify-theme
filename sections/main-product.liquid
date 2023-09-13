@@ -1045,6 +1045,54 @@
         ]
       },
       {
+        "type": "sizeguide",
+        "name": "Size Guide",
+        "settings": [
+          {
+            "type": "select",
+            "id": "icon",
+            "label": "Icon",
+            "options": [
+              { "value": "none", "label": "None"},
+              { "value": "map-pin", "label": "Map pin"},
+              { "value": "pants", "label": "Pants"},
+              { "value": "return", "label": "Return"},
+              { "value": "ruler", "label": "Ruler"},
+              { "value": "shirt", "label": "Shirt"},
+              { "value": "shoe", "label": "Shoe"}
+            ],
+            "default":   "none"
+          },
+          {
+            "type": "text",
+            "id": "text",
+            "default": "Size guide text",
+            "label": "Link label"
+          },
+          {
+            "id": "image",
+            "type": "image_picker",
+            "label": "Image"
+          },
+          {
+            "type": "select",
+            "id": "text_color",
+            "label": "Text color",
+            "options": [
+              {
+                "value": "text",
+                "label": "Text"
+              },
+              {
+                "value": "secondary",
+                "label": "Secondary"
+              }
+            ],
+            "default": "secondary"
+          }
+        ]
+      },
+      {
         "type": "@app"
       },
       {
