@@ -111,6 +111,20 @@
       {%- assign child_menu = '' -%}
       {%- assign grandchild_menu = '' -%}
       {%- if link.links != blank -%}
+        {% if link.title == "Womenswear" or link.title == "Menswear" or link.title == "Home" %}
+          {%- unless layout contains 'spread' -%}
+            <li class="inline-flex flex items-stretch {{ item_classes }}">
+          {%- endunless -%}
+          <a {% if link.active %}aria-current="page"{% endif %} class="flex py-2 relative {% if layout contains 'spread' %}self-stretch flex flex-col inline-block{% endif %}" href="{{ link.url }}">
+            <span class="inline-block m-auto">{{ link.title }}</span>
+            {%- if link.active -%}
+              <span class="block w-theme-width h-2 bg-border absolute -bottom-2 left-1/2 -translate-x-1/2"></span>
+            {%- endif -%}
+          </a>
+          {%- unless layout contains 'spread' -%}
+            </li>
+          {%- endunless -%}
+        {% else %}
         {%- if link_all -%}
           {% capture link_dropdown %}
             <div class="ml-16">
@@ -209,6 +223,7 @@
           </li>
         {%- endunless -%}
         {% assign counter = counter | plus: 1 %}
+        {% endif %}
       {%- else -%}
         {%- unless layout contains 'spread' -%}
           <li class="inline-flex flex items-stretch {{ item_classes }}">
