@@ -1,0 +1,51 @@
+{% assign textca = block.settings.textca %}
+{% assign textusa = block.settings.textusa %}
+{% assign textaus = block.settings.textaus %}
+{% assign texteu = block.settings.texteu %}
+{% assign textasia = block.settings.textasia %}
+
+<div class="mt-8 font-body {{ block.settings.text_size }}  {% if block.settings.icon != 'none' %}flex items-center justify-start{% endif %}" {{ block.shopify_attributes }}>
+  {% if block.settings.icon != 'none' %}<span class="inline-block w-5 h-5 mr-2">{% render 'product-icon', icon: block.settings.icon %}</span>{% endif %}
+  <span id="shipping-policy-country-message"></span>
+</div>
+
+<script>
+  const url = 'https://ipinfo.io?token=e3299d0665c57d ';
+  const shippingPolicyMessage = document.getElementById("shipping-policy-country-message");
+  const textCAN = '{{ textca }}';
+  const textUSA = '{{ textusa }}';
+  const textAUS = '{{ textaus }}';
+  const textEU = '{{ texteu }}';
+  const textASIA = '{{ textasia }}';
+
+  async function fetchData() {
+    try {
+      const response = await fetch(url);
+
+      if (!response.ok) {
+        throw new Error(`Network response was not ok: ${response.status}`);
+      }
+
+      const data = await response.json();
+      if (data.country === "CA") {
+        shippingPolicyMessage.innerHTML = textCAN;
+      } else if (data.country === "US") {
+        shippingPolicyMessage.innerHTML = textUSA;
+      } else if (data.country === "AU") {
+        shippingPolicyMessage.innerHTML = textAUS;
+      } else if (data.timezone.includes("Asia")) {
+        shippingPolicyMessage.innerHTML = textASIA;
+      } else if (data.timezone.includes("Europe")) {
+        shippingPolicyMessage.innerHTML = textEU;
+      } else {
+        shippingPolicyMessage.innerHTML = textCAN;
+      }
+
+    } catch (error) {
+      console.error('There was a problem with the fetch operation:', error);
+    }
+  }
+
+  fetchData();
+
+</script>

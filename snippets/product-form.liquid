@@ -343,6 +343,8 @@
       %}
     {%- when 'text' -%}
       {% render 'product-block-text', block: block %}
+    {%- when 'shippingpolicy' -%}
+      {% render 'product-block-shipping-policy', block: block %}
     {%- when 'richtext' -%}
       {% render 'product-block-richtext', block: block %}
     {%- when 'collapsible_tab' -%}
@@ -362,8 +364,7 @@
         section_color: section_color
       %}
     {%- when 'sizeguide' -%}
-      testeste
-      {% render 'product-block-size-guide',
+      {% render 'product-block-size-guide∂',
         block: block,
         section_color: section_color
       %}

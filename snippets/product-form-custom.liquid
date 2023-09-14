@@ -347,8 +347,10 @@
         product: product
       %}
       </div>
-    {%- when 'text' -%}        
-        {% render 'product-block-text', block: block %}        
+    {%- when 'text' -%}
+        {% render 'product-block-text', block: block %}
+    {%- when 'shippingpolicy' -%}
+      {% render 'product-block-shipping-policy', block: block %}
     {%- when 'richtext' -%}
         <div class="lg:hidden">
             {% render 'product-block-richtext', block: block %}
@@ -374,7 +376,6 @@
         section_color: section_color
       %}
     {%- when 'sizeguide' -%}
-      testeste
       {% render 'product-block-size-guide',
         block: block,
         section_color: section_color
