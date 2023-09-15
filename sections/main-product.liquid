@@ -129,7 +129,7 @@
         {% endfor %}
       </div>    
   </div>
-  <div class="relative {% if product.media.size > 1 %}pb-8{% endif %} lg:pb-0 product-media-container bg-scheme-background text-scheme-text {{ image_width_desktop }} {% unless settings.fill_image_to_border_edge %}border-b-grid border-grid-color lg:border-0{% endunless %}" data-product-single-media-group>
+  <div class="relative {% if product.media.size > 1 %}pb-8{% endif %} lg:pb-0 product-media-container product-media-container--justify-center bg-scheme-background text-scheme-text {{ image_width_desktop }} {% unless settings.fill_image_to_border_edge %}border-b-grid border-grid-color lg:border-0{% endunless %}" data-product-single-media-group>
     <div class="splide splide--product lg:sticky lg:top-sticky-header  {% if negative_margin %}lg:-mb-theme-width{% endif %}" data-drag-disabled="{{ has_interactive_media }}" {% if product.media.size > 1 %}data-slideshow-enabled="true"{% endif %} data-width='0'>
       <div class="transition-max-height splide__track {% if settings.fill_image_to_border_edge %}border-b-grid border-grid-color lg:border-0{% endif %} {% unless settings.fill_image_to_border_edge %}lg:p-4{% endunless %} {% if negative_margin %}lg:border-b-grid lg:border-grid-color{% endif %}">
         <ul class="splide__list lg:w-full lg:grid {% if two_images_per_row and product.media.size > 1 %}lg:grid-cols-2{% else %}lg:grid-cols-1{% endif %} {% if settings.fill_image_to_border_edge %}lg:gap-gutter {% comment %}lg:bg-border{% endcomment %}{% else %}lg:gap-4{% endif%}">
@@ -259,7 +259,37 @@
   {%- assign image_height_float = first_media.image.height | times: 1.0 -%}
   {% assign image_ratio = first_media.image.width | divided_by: image_height_float  %}
   <input type="hidden" data-test123="{{image_ratio}}">
-  <script>    
+  <script>
+    let getWinHeight = window.innerHeight - 78;
+    let getImgWidth = getWinHeight * {{image_ratio}} + 2;
+    let otherDivWidth = (window.innerWidth - getImgWidth) / 2;
+
+    function myFunction(x) {
+      let default_width = document.querySelector('.product-media-container .splide--product').dataset.width;
+      let winDevWidth
+      if(window.innerWidth > 1900){
+        winDevWidth = 1900;
+      }else{
+        winDevWidth = window.innerWidth
+      }
+
+      console.log("=====================", getImgWidth, winDevWidth, getImgWidth, window.innerWidth)
+      if (x.matches) { // If media query matches
+        document.querySelector('.product-media-container .splide--product').setAttribute("style","width:"+ getImgWidth + "px");
+        document.querySelector('.product_content_leftside').setAttribute("style","width:"+ otherDivWidth + "px; flex: auto");
+        document.querySelector('.product_content_rightside').setAttribute("style","width:"+ otherDivWidth + "px; flex: auto");
+      } else {
+        document.querySelector('.product-media-container .splide--product').setAttribute("style","width: unset");
+        document.querySelector('.product_content_leftside').setAttribute("style","width:unset; flex: auto");
+        document.querySelector('.product_content_rightside').setAttribute("style","width:unset; flex: auto");
+      }
+    }
+
+    let x = window.matchMedia("(min-width: 1024px)")
+    myFunction(x) // Call listener function at run time
+    x.addListener(myFunction) // Attach listener function on state changes
+
+
     document.querySelector('.product-media-container .splide--product').dataset.width = window.innerWidth;
 
     function getImageWidth(image_ratio){
@@ -287,13 +317,11 @@
 
       other_div_width = (win_dev_width - get_img_width) / 2;
       if(window.innerWidth > 1023 && diff_width_flag){
-        console.log('aaabcd');
         console.log(diff_width);
-        console.log('aaabcd');
-        document.querySelector('.product-media-container .splide--product').setAttribute("style","width:"+ get_img_width + "px");
-        document.querySelector('.product-media-container .splide--product').dataset.width = window.innerWidth;
-        document.querySelector('.product_content_leftside').setAttribute("style","width:"+ other_div_width + "px; flex: auto");
-        document.querySelector('.product_content_rightside').setAttribute("style","width:"+ other_div_width + "px; flex: auto");      
+        // document.querySelector('.product-media-container .splide--product').setAttribute("style","width:"+ get_img_width + "px");
+        // document.querySelector('.product-media-container .splide--product').dataset.width = window.innerWidth;
+        // document.querySelector('.product_content_leftside').setAttribute("style","width:"+ other_div_width + "px; flex: auto");
+        // document.querySelector('.product_content_rightside').setAttribute("style","width:"+ other_div_width + "px; flex: auto");      
         document.querySelector('.product-media-container .splide--product .splide__slide').setAttribute("style","visibility:visible;");
 
       }  
