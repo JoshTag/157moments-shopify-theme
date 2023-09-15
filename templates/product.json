@@ -1,1 +1,128 @@
-{"sections":{"main":{"type":"main-product","blocks":{"4673f83f-f1da-46cf-9748-7004ecb0c20d":{"type":"vendor","settings":{}},"title":{"type":"title","settings":{}},"price":{"type":"price","settings":{}},"variant_picker":{"type":"variant_picker","settings":{"option_style":"text_underline","hide_option_labels":false}},"buy_buttons":{"type":"buy_buttons","settings":{"enable_payment_button":false,"show_pickup_availability":false}},"93c4645d-3bd5-453c-86ea-23b824f49645":{"type":"shopify:\/\/apps\/klarna-on-site-messaging\/blocks\/app-block\/b95936a9-74b6-4a95-8103-6a1b6459c25e","settings":{"data_key":"credit-promotion-badge","locale_option":"geolocation","locale_fallback":"","theme":"light","topPadding":"0","bottomPadding":"0","messagePrefix":""}},"description":{"type":"description","settings":{"enable_collapsible_tabs":false,"truncate_description":false}},"6c9c493f-0126-4e04-98e2-e257bcc71719":{"type":"text","settings":{"text":"Accepting returns within 7 days","font":"body","text_size":"text-base","icon":"return"}}},"block_order":["4673f83f-f1da-46cf-9748-7004ecb0c20d","title","price","variant_picker","buy_buttons","93c4645d-3bd5-453c-86ea-23b824f49645","description","6c9c493f-0126-4e04-98e2-e257bcc71719"],"settings":{"desktop_image_width":"one-half","desktop_image_position":"left","two_images_per_row":false,"first_image_full_width":false,"variant_image_behaviour":"swap","enable_image_zoom":true,"enable_video_looping":false,"color_scheme":"primary","override_header_footer_color_scheme":false}},"product-recommendations":{"type":"product-recommendations","custom_css":[".pt-theme-double {padding-top: var(--spacing);}"],"settings":{"show_product_recommendations":true,"product_recommendations_heading":"You may also like","limit":"6","products_per_row_desktop":"6","products_per_row_mobile":"2","color_scheme":"primary"}}},"order":["main","product-recommendations"]}
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "4673f83f-f1da-46cf-9748-7004ecb0c20d": {
+          "type": "vendor",
+          "settings": {
+          }
+        },
+        "title": {
+          "type": "title",
+          "settings": {
+          }
+        },
+        "price": {
+          "type": "price",
+          "settings": {
+          }
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "option_style": "text_underline",
+            "hide_option_labels": false
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "enable_payment_button": false,
+            "show_pickup_availability": false
+          }
+        },
+        "93c4645d-3bd5-453c-86ea-23b824f49645": {
+          "type": "shopify:\/\/apps\/klarna-on-site-messaging\/blocks\/app-block\/b95936a9-74b6-4a95-8103-6a1b6459c25e",
+          "settings": {
+            "data_key": "credit-promotion-badge",
+            "locale_option": "geolocation",
+            "locale_fallback": "",
+            "theme": "light",
+            "topPadding": "0",
+            "bottomPadding": "0",
+            "messagePrefix": ""
+          }
+        },
+        "description": {
+          "type": "description",
+          "settings": {
+            "enable_collapsible_tabs": false,
+            "truncate_description": false
+          }
+        },
+        "6c9c493f-0126-4e04-98e2-e257bcc71719": {
+          "type": "text",
+          "settings": {
+            "text": "Accepting returns within 7 days",
+            "font": "body",
+            "text_size": "text-base",
+            "icon": "return"
+          }
+        },
+        "0fdff4d1-18ff-47f9-8a1a-3e87804cfc8f": {
+          "type": "shippingpolicy",
+          "settings": {
+            "textca": "Text CA",
+            "textusa": "Text USA",
+            "textaus": "Text AUS",
+            "texteu": "Text EU",
+            "textasia": "Text ASIA",
+            "text_size": "text-base",
+            "icon": "truck"
+          }
+        },
+        "fd1f08ad-da26-499e-a728-6e02b14ca2c9": {
+          "type": "sizeguide",
+          "settings": {
+            "icon": "ruler",
+            "text": "Size guide",
+            "image": "shopify:\/\/shop_images\/white_bg_logo.png",
+            "text_color": "text"
+          }
+        }
+      },
+      "block_order": [
+        "4673f83f-f1da-46cf-9748-7004ecb0c20d",
+        "title",
+        "price",
+        "variant_picker",
+        "buy_buttons",
+        "93c4645d-3bd5-453c-86ea-23b824f49645",
+        "description",
+        "6c9c493f-0126-4e04-98e2-e257bcc71719",
+        "0fdff4d1-18ff-47f9-8a1a-3e87804cfc8f",
+        "fd1f08ad-da26-499e-a728-6e02b14ca2c9"
+      ],
+      "settings": {
+        "desktop_image_width": "one-half",
+        "desktop_image_position": "left",
+        "two_images_per_row": false,
+        "first_image_full_width": false,
+        "variant_image_behaviour": "swap",
+        "enable_image_zoom": true,
+        "enable_video_looping": false,
+        "color_scheme": "primary",
+        "override_header_footer_color_scheme": false
+      }
+    },
+    "product-recommendations": {
+      "type": "product-recommendations",
+      "custom_css": [
+        ".pt-theme-double {padding-top: var(--spacing);}"
+      ],
+      "settings": {
+        "show_product_recommendations": true,
+        "product_recommendations_heading": "You may also like",
+        "limit": "6",
+        "products_per_row_desktop": "6",
+        "products_per_row_mobile": "2",
+        "color_scheme": "primary"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "product-recommendations"
+  ]
+}
