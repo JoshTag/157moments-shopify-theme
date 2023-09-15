@@ -100,23 +100,22 @@
 -%}
 
 
-{% assign currentcollection = collection.title | handle %}
+{% assign currentcollection = collection.url | remove: "/collections/" %}
 {% if collection.title == "All/Women/Unisex" %}
 {% assign currentcollection = "all-womens-unisex"%}
 {% endif %}
-
 
 {% assign menuitemsMenswear = '' | split: '' %}
 {% for link in linklists.main-menu.links %}
   {% if link.title == "Menswear" %}
     {% for child_link in link.links %}
       {% if child_link.links.size == 0 %}
-        {% assign menuItemName = child_link.url | handle | remove: "collections-"| split: ' ' %}
+        {% assign menuItemName = child_link.url | remove: "/collections/" | split: ' ' %}
         {% assign menuitemsMenswear = menuitemsMenswear | concat: menuItemName %}
       {% endif %}
       {% if child_link.links.size > 0 %}
         {% for grandchild_link in child_link.links %}
-          {% assign menuItemName = grandchild_link.url | handle | remove: "collections-"| split: ' ' %}
+          {% assign menuItemName = grandchild_link.url | remove: "/collections/" | split: ' ' %}
           {% assign menuitemsMenswear = menuitemsMenswear | concat: menuItemName %}
         {% endfor %}
       {% endif %}
@@ -129,12 +128,12 @@
   {% if link.title == "Womenswear" %}
     {% for child_link in link.links %}
       {% if child_link.links.size == 0 %}
-        {% assign menuItemName = child_link.url | handle | remove: "collections-"| split: ' ' %}
+        {% assign menuItemName = child_link.url | remove: "/collections/" | split: ' ' %}
         {% assign menuitemsWomenswear = menuitemsWomenswear | concat: menuItemName %}
       {% endif %}
       {% if child_link.links.size > 0 %}
         {% for grandchild_link in child_link.links %}
-          {% assign menuItemName = grandchild_link.url | handle | remove: "collections-"| split: ' ' %}
+          {% assign menuItemName = grandchild_link.url | remove: "/collections/" | split: ' ' %}
           {% assign menuitemsWomenswear = menuitemsWomenswear | concat: menuItemName %}
         {% endfor %}
       {% endif %}
@@ -147,12 +146,12 @@
   {% if link.title == "Home" %}
     {% for child_link in link.links %}
       {% if child_link.links.size == 0 %}
-        {% assign menuItemName = child_link.url | handle | remove: "collections-"| split: ' ' %}
+        {% assign menuItemName = child_link.url | remove: "/collections/" | split: ' ' %}
         {% assign menuitemsHome = menuitemsHome | concat: menuItemName %}
       {% endif %}
       {% if child_link.links.size > 0 %}
         {% for grandchild_link in child_link.links %}
-          {% assign menuItemName = grandchild_link.url | handle | remove: "collections-"| split: ' ' %}
+          {% assign menuItemName = grandchild_link.url | remove: "/collections/" | split: ' ' %}
           {% assign menuitemsHome = menuitemsHome | concat: menuItemName %}
         {% endfor %}
       {% endif %}
