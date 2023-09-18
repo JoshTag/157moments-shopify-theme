@@ -51,15 +51,6 @@
             "truncate_description": false
           }
         },
-        "6c9c493f-0126-4e04-98e2-e257bcc71719": {
-          "type": "text",
-          "settings": {
-            "text": "Accepting returns within 7 days",
-            "font": "body",
-            "text_size": "text-base",
-            "icon": "return"
-          }
-        },
         "0fdff4d1-18ff-47f9-8a1a-3e87804cfc8f": {
           "type": "shippingpolicy",
           "settings": {
@@ -90,7 +81,6 @@
         "buy_buttons",
         "93c4645d-3bd5-453c-86ea-23b824f49645",
         "description",
-        "6c9c493f-0126-4e04-98e2-e257bcc71719",
         "0fdff4d1-18ff-47f9-8a1a-3e87804cfc8f",
         "fd1f08ad-da26-499e-a728-6e02b14ca2c9"
       ],
