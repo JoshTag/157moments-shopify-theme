@@ -54,8 +54,8 @@
         "0fdff4d1-18ff-47f9-8a1a-3e87804cfc8f": {
           "type": "shippingpolicy",
           "settings": {
-            "textca": "Text CA",
-            "textusa": "Text USA",
+            "textca": "Canada: Free shipping on orders over $200 CAD and accepting return within 14 days.",
+            "textusa": "United States: Free shipping on orders over $200 CAD and accepting return within 14 days. All duties and texes will be coverd by 157Moments.",
             "textaus": "Text AUS",
             "texteu": "Text EU",
             "textasia": "Text ASIA",
