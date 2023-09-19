@@ -5,7 +5,7 @@
   {% capture color_class %}text-scheme-meta group hover:text-scheme-accent{% endcapture %}
   {% capture border_class %}border-scheme-meta group-hover:border-scheme-accent{% endcapture %}
 {%- endif -%}
-<div class="product-page-popup-link  mt-8 " r-data="{{ block.settings.image }}" {% if block.settings.image == blank %}style="display: none;{% endif %} x-data="ThemeComponent_PopUp()" x-init="mounted()" data-color-scheme="{{ section_color }}">
+<div class="product-page-popup-link  mt-8 " {% if block.settings.image == blank %}style="display: none;{% endif %} x-data="ThemeComponent_PopUp()" x-init="mounted()" data-color-scheme="{{ section_color }}">
   <div class="js-enabled" {{ block.shopify_attributes }}>
     <button
       @click="open = true"
