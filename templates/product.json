@@ -68,7 +68,7 @@
           "settings": {
             "icon": "ruler",
             "text": "Size guide",
-            "image": "shopify:\/\/shop_images\/white_bg_logo.png",
+            "image": "{{ product.metafields.product_details.size_chart.value.size_chart.value }}",
             "text_color": "text"
           }
         }
