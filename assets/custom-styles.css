@@ -50,7 +50,7 @@
     position: absolute;
     bottom: -1px;
     left: 0px;
-    width: 100.5%;
+    width: calc(100% + 1px);
     height: 1px;
     background-color: var(--color-scheme-text);
   }
