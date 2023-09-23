@@ -364,7 +364,7 @@
         section_color: section_color
       %}
     {%- when 'sizeguide' -%}
-      {% render 'product-block-size-guide∂',
+      {% render 'product-block-size-guide',
         block: block,
         section_color: section_color
       %}
@@ -379,5 +379,7 @@
         section: section,
         section_color: section_color
       %}
+    {%- when 'final_sale' -%}
+      {% render 'product-block-sale', block: block %}
   {%- endcase -%}
 {%- endfor -%}

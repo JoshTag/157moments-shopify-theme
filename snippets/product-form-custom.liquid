@@ -393,5 +393,7 @@
                 section_color: section_color
             %}
         </div>
+        {%- when 'final_sale' -%}
+          {% render 'product-block-sale', block: block %}
   {%- endcase -%}
 {%- endfor -%}

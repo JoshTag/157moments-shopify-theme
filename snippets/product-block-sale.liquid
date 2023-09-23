@@ -1,0 +1,6 @@
+{% if product.tags contains "Sale" %}
+<div class="mt-8 font-body text-base flex items-center justify-start" {{ block.shopify_attributes }}>
+  <span class="inline-block w-5 h-5 mr-2">{% render 'product-icon', icon: "price-tag" %}</span>
+  {{ block.settings.text }}
+</div>
+{% endif %}
