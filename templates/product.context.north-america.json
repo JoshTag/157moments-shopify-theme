@@ -1,7 +1,7 @@
 {
   "parent": "product.json",
   "context": {
-    "market": "africa-asia-central-america-south-america-other"
+    "market": "north-america"
   },
   "sections": {
   }
