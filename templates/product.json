@@ -55,12 +55,12 @@
           "type": "shippingpolicy",
           "settings": {
             "textca": "Canada: Free shipping on orders over $200 CAD and accepting return within 14 days.",
-            "textusa": "United States: Free shipping on orders over $200 CAD and accepting return within 14 days. All duties and texes will be coverd by 157Moments.",
+            "textusa": "United States: Free shipping on orders over $200 CAD and accepting return within 14 days. All duties and taxes will be coverd by 157Moments.",
             "textaus": "Text AUS",
             "texteu": "Text EU",
             "textasia": "Text ASIA",
             "text_size": "text-base",
-            "icon": "truck"
+            "icon": "none"
           }
         },
         "fd1f08ad-da26-499e-a728-6e02b14ca2c9": {
