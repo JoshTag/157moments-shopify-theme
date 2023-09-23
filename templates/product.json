@@ -71,6 +71,12 @@
             "image": "{{ product.metafields.product_details.size_chart.value.size_chart.value }}",
             "text_color": "text"
           }
+        },
+        "dbe83ee6-38c9-4100-a7a9-6a99961f5f58": {
+          "type": "final_sale",
+          "settings": {
+            "text": "This item is Final Sale"
+          }
         }
       },
       "block_order": [
@@ -82,7 +88,8 @@
         "93c4645d-3bd5-453c-86ea-23b824f49645",
         "description",
         "0fdff4d1-18ff-47f9-8a1a-3e87804cfc8f",
-        "fd1f08ad-da26-499e-a728-6e02b14ca2c9"
+        "fd1f08ad-da26-499e-a728-6e02b14ca2c9",
+        "dbe83ee6-38c9-4100-a7a9-6a99961f5f58"
       ],
       "settings": {
         "desktop_image_width": "one-half",
