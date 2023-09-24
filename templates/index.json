@@ -55,7 +55,7 @@
       "settings": {
         "image_size": "half",
         "image_1": "shopify:\/\/shop_images\/1_ec022c04-d168-4dc1-a0cf-bb4e489bcc53.jpg",
-        "indent_image_1": true,
+        "indent_image_1": false,
         "crop": "0",
         "link_1": "https:\/\/157moments.com\/collections\/documents\/products\/koi-car-sachet-season-03-lost",
         "color_scheme_1": "primary",
