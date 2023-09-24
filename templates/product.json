@@ -56,9 +56,7 @@
           "settings": {
             "textca": "Free shipping on orders over $200 CAD and accepting return within 14 days.",
             "textusa": "Free shipping on orders over $200 CAD and accepting return within 14 days. All duties and taxes will be coverd by 157Moments.",
-            "textaus": "Text AUS",
-            "texteu": "Text EU",
-            "textasia": "Text ASIA",
+            "textint": "Free shipping on orders over $700 CAD and accepting return within 14 days.",
             "text_size": "text-base",
             "icon": "none"
           }
