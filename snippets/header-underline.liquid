@@ -1,0 +1,79 @@
+{% assign currentcollection = collection.url | remove: "/collections/" %}
+
+{% capture menuitemsMenswear %}
+{% for link in linklists.main-menu.links %}
+  {% if link.title == "Menswear" %}
+    {% for child_link in link.links %}
+      {% if child_link.links.size == 0 %}
+        {% assign menuItemName = child_link.url | remove: "/collections/" | split: ' ' %}
+        {{ menuItemName }}
+      {% endif %}
+      {% if child_link.links.size > 0 %}
+        {% for grandchild_link in child_link.links %}
+          {% assign menuItemName = grandchild_link.url | remove: "/collections/" | split: ' ' %}
+          {{ menuItemName }}
+        {% endfor %}
+      {% endif %}
+    {% endfor %}
+  {% endif %}
+{% endfor %}
+{% endcapture %}
+
+{% capture menuitemsWomenswear %}
+{% for link in linklists.main-menu.links %}
+  {% if link.title == "Womenswear" %}
+    {% for child_link in link.links %}
+      {% if child_link.links.size == 0 %}
+        {% assign menuItemName = child_link.url | remove: "/collections/" | split: ' ' %}
+        {{ menuItemName }}
+      {% endif %}
+      {% if child_link.links.size > 0 %}
+        {% for grandchild_link in child_link.links %}
+          {% assign menuItemName = grandchild_link.url | remove: "/collections/" | split: ' ' %}
+          {{ menuItemName }},
+        {% endfor %}
+      {% endif %}
+    {% endfor %}
+  {% endif %}
+{% endfor %}
+{% endcapture %}
+
+{% capture menuitemsHome %}
+{% for link in linklists.main-menu.links %}
+  {% if link.title == "Home" %}
+    {% for child_link in link.links %}
+      {% if child_link.links.size == 0 %}
+        {% assign menuItemName = child_link.url | remove: "/collections/" | split: ' ' %}
+        {{ menuItemName }}
+      {% endif %}
+      {% if child_link.links.size > 0 %}
+        {% for grandchild_link in child_link.links %}
+          {% assign menuItemName = grandchild_link.url | remove: "/collections/" | split: ' ' %}
+          {{ menuItemName }}
+        {% endfor %}
+      {% endif %}
+    {% endfor %}
+  {% endif %}
+{% endfor %}
+{% endcapture %}
+
+{% if template == "collection" %}
+  {% if menuitemsWomenswear contains currentcollection %}
+    {% if title == "Womenswear" %}
+    menu-item--active-underline
+    {% endif %}
+  {% elsif menuitemsMenswear contains currentcollection %}
+    {% if title == "Menswear" %}
+    menu-item--active-underline
+    {% endif %}
+  {% elsif menuitemsHome contains currentcollection %}
+    {% if title == "Home" %}
+    menu-item--active-underline
+    {% endif %}
+  {% endif %}
+{% endif %}
+
+
+{% comment %} {% if title == "Womenswear" or title == "Menswear" or title == "Home" %}
+  {% if title == collection_menu %}menu-item--active-underline{% endif %}
+{% endif %} {% endcomment %}

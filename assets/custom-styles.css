@@ -65,6 +65,12 @@
 
 }
 
+/* Menu active underline */
+.menu-item--active-underline {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
 /* Size Guide Popup */
 .product-popup-modal--padding-10 {
   padding: 10px;

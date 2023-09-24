@@ -116,7 +116,7 @@
             <li class="inline-flex flex items-stretch {{ item_classes }}">
           {%- endunless -%}
           <a {% if link.active %}aria-current="page"{% endif %} class="flex py-2 relative {% if layout contains 'spread' %}self-stretch flex flex-col inline-block{% endif %}" href="{{ link.url }}">
-            <span class="inline-block m-auto">{{ link.title }}</span>
+            <span class="inline-block m-auto {% render 'header-underline', title: link.title %}">{{ link.title }}</span>
             {% comment %} Removed active link
             {%- if link.active -%}
               <span class="block w-theme-width h-2 bg-border absolute -bottom-2 left-1/2 -translate-x-1/2"></span>
@@ -232,9 +232,9 @@
         {%- endunless -%}
           <a {% if link.active %}aria-current="page"{% endif %} class="flex py-2 relative {% if layout contains 'spread' %}self-stretch flex flex-col inline-block{% endif %}" href="{{ link.url }}">
             <span class="inline-block m-auto">{{ link.title }}</span>
-            {%- if link.active -%}
+            {% comment %} {%- if link.active -%}
               <span class="block w-theme-width h-2 bg-border absolute -bottom-2 left-1/2 -translate-x-1/2"></span>
-            {%- endif -%}
+            {%- endif -%} {% endcomment %}
           </a>
         {%- unless layout contains 'spread' -%}
           </li>
