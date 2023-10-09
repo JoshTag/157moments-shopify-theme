@@ -1,5 +1,30 @@
 {
   "sections": {
+    "873c4c0d-dba3-42df-9a7d-73e8315cd0d3": {
+      "type": "image-split",
+      "settings": {
+        "image_size": "half",
+        "image_1": "shopify:\/\/shop_images\/1202308090666.png",
+        "indent_image_1": false,
+        "crop": "0",
+        "link_1": "shopify:\/\/collections\/fafamoon",
+        "color_scheme_1": "primary",
+        "caption_1": "",
+        "content_position_1": "justify-center items-center text-center",
+        "text_color_1": "primary",
+        "text_style_1": "normal",
+        "image_2": "shopify:\/\/shop_images\/202308091608.png",
+        "preserve_ratio_2": false,
+        "indent_image_2": false,
+        "link_2": "shopify:\/\/collections\/fafamoon",
+        "color_scheme_2": "secondary",
+        "caption_2": "",
+        "content_position_2": "justify-center items-center text-center",
+        "text_alignment_2": "text-left",
+        "text_color_2": "primary",
+        "text_style_2": "normal"
+      }
+    },
     "f09b898a-0f68-4eac-ba2a-7766a8b534aa": {
       "type": "image-split",
       "settings": {
@@ -77,6 +102,7 @@
     }
   },
   "order": [
+    "873c4c0d-dba3-42df-9a7d-73e8315cd0d3",
     "f09b898a-0f68-4eac-ba2a-7766a8b534aa",
     "aea8ea0a-980e-4d8c-bc5f-71658a83a43e",
     "7e819e66-7ef7-4314-b558-ff8669407d07"
