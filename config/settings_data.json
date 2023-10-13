@@ -86,8 +86,8 @@
       "announcement-bar": {
         "type": "announcement-bar",
         "settings": {
-          "show_announcement_bar": true,
-          "home_page_only": true,
+          "show_announcement_bar": false,
+          "home_page_only": false,
           "display": "marquee",
           "text": "Celebrate One-Year Anniversary with a special 20% store credit rebate from September 20th - October 1st! All orders qualify for a 20% store credit and it would be sent directly your purchase email by the end of order day.",
           "link": "",
