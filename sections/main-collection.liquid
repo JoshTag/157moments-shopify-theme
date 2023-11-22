@@ -163,7 +163,9 @@
 {% elsif menuitemsMenswear contains currentcollection %}
   {% assign collection_menu = "Menswear" %}
 {% elsif menuitemsHome contains currentcollection %}
-    {% assign collection_menu = "Home" %}
+  {% assign collection_menu = "Home" %}
+{% else %}
+  {% assign collection_menu = "Womenswear" %}
 {% endif %}
 
 {%- if show_marquee and marquee_position == 'top' -%}

@@ -23,8 +23,7 @@
     margin-bottom: 20px;
   }
 
-  .collection-page__menu > .collection-page__menu-list:nth-of-type(4),
-  .collection-page__menu > .collection-page__menu-list:nth-of-type(3) {
+  .collection-page__menu > .collection-page__menu-list:not(:first-child):not(:nth-child(2)) {
     margin-bottom: 0px;
   }
 
@@ -92,4 +91,9 @@
 /* Shipping product block */
 .shipping-icon--min-height {
   min-width: 1.25rem;
+}
+
+/* Cart page */
+.cart__klarna-app {
+  margin-top: 10px;
 }

@@ -58,22 +58,19 @@
 {% endcapture %}
 
 {% if template == "collection" %}
-  {% if menuitemsWomenswear contains currentcollection %}
-    {% if title == "Womenswear" %}
-    menu-item--active-underline
+  {% unless currentcollection contains "sale" %}
+    {% if menuitemsWomenswear contains currentcollection %}
+      {% if title == "Womenswear" %}
+      menu-item--active-underline
+      {% endif %}
+    {% elsif menuitemsMenswear contains currentcollection %}
+      {% if title == "Menswear" %}
+      menu-item--active-underline
+      {% endif %}
+    {% elsif menuitemsHome contains currentcollection %}
+      {% if title == "Home" %}
+      menu-item--active-underline
+      {% endif %}
     {% endif %}
-  {% elsif menuitemsMenswear contains currentcollection %}
-    {% if title == "Menswear" %}
-    menu-item--active-underline
-    {% endif %}
-  {% elsif menuitemsHome contains currentcollection %}
-    {% if title == "Home" %}
-    menu-item--active-underline
-    {% endif %}
-  {% endif %}
+  {% endunless %}
 {% endif %}
-
-
-{% comment %} {% if title == "Womenswear" or title == "Menswear" or title == "Home" %}
-  {% if title == collection_menu %}menu-item--active-underline{% endif %}
-{% endif %} {% endcomment %}
