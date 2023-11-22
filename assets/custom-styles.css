@@ -97,3 +97,16 @@
 .cart__klarna-app {
   margin-top: 10px;
 }
+
+.cart-image--large-width {
+  width: 5rem !important;
+}
+
+@media screen and (min-width: 768px){
+  .cart-image--large-width {
+    width: 10rem !important;
+  }
+  .cart-note--margin-top-30 {
+    margin-top: 30px;
+  }
+}

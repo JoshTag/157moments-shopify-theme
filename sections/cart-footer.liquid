@@ -3,7 +3,7 @@
   <div class="md:grid md:grid-cols-12 section-x-padding pb-theme">
     {% if settings.cart_notes_enable %}
       <div class="mt-4 md:col-span-5">
-        <label class="block" for="CartSpecialInstructions">{{ 'cart.general.note' | t }}</label>
+        <label class="block cart-note--margin-top-30" for="CartSpecialInstructions">{{ 'cart.general.note' | t }}</label>
         <textarea class="block mt-1 p-2 w-full border-text border-current text-sm bg-transparent" name="note" id="CartSpecialInstructions" form="cart">{{ cart.note }}</textarea>
       </div>
     {% endif %}

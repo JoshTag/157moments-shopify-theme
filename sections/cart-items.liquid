@@ -23,7 +23,7 @@
               <td data-label="{{ 'customer.order.product' | t }}">
                 <div class="flex">
                   {% if item.image != blank %}
-                    <div class="w-10 md:w-20 mr-4">
+                    <div class="w-10 md:w-20 mr-4 cart-image--large-width">
                       <a href="{{ item.url | within: collections.all }}">
                         {{ item | img_url: '240x240' | img_tag: item.title }}
                       </a>
