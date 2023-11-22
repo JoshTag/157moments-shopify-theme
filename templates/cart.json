@@ -1,1 +1,41 @@
-{"sections":{"cart-items":{"type":"cart-items","settings":{}},"cart-footer":{"type":"cart-footer","settings":{}},"16868654982c4e578d":{"type":"apps","blocks":{"28a476ce-19ed-42b2-848a-abe01186b01d":{"type":"shopify:\/\/apps\/klarna-on-site-messaging\/blocks\/app-block\/b95936a9-74b6-4a95-8103-6a1b6459c25e","settings":{"data_key":"credit-promotion-badge","locale_option":"geolocation","locale_fallback":"","theme":"light","topPadding":"0","bottomPadding":"0"}}},"block_order":["28a476ce-19ed-42b2-848a-abe01186b01d"],"settings":{}}},"order":["cart-items","cart-footer","16868654982c4e578d"]}
+{
+  "sections": {
+    "cart-items": {
+      "type": "cart-items",
+      "settings": {
+      }
+    },
+    "cart-footer": {
+      "type": "cart-footer",
+      "blocks": {
+        "2e78c34c-d004-45bf-9ecf-a292439d444a": {
+          "type": "shopify:\/\/apps\/klarna-on-site-messaging\/blocks\/app-block\/b95936a9-74b6-4a95-8103-6a1b6459c25e",
+          "settings": {
+            "data_key": "top-strip-promotion-badge",
+            "locale_option": "geolocation",
+            "locale_fallback": "",
+            "theme": "light",
+            "topPadding": "0",
+            "bottomPadding": "0",
+            "messagePrefix": ""
+          }
+        }
+      },
+      "block_order": [
+        "2e78c34c-d004-45bf-9ecf-a292439d444a"
+      ],
+      "settings": {
+      }
+    },
+    "16868654982c4e578d": {
+      "type": "apps",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "cart-items",
+    "cart-footer",
+    "16868654982c4e578d"
+  ]
+}
