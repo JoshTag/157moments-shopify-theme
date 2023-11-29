@@ -3,7 +3,7 @@
   <div class="js-contents">
   {% if cart.item_count > 0 %}
     <div class="relative section-x-padding pt-theme-double pb-theme md:pb-0">
-      <h1 class="font-heading {{ settings.base_heading_size }} md:absolute md:bottom-0 md:transform md:translate-y-7">{{ 'cart.general.title' | t }}</h1>
+      <h1 class="font-heading {{ settings.base_heading_size }} md:absolute md:bottom-0 md:transform md:translate-y-7 translate-left--0">{{ 'cart.general.title' | t }}</h1>
     </div>
     <form action="{{ routes.cart_url }}" method="post" novalidate id="cart">
       <table class="cart-table js-contents">
@@ -29,7 +29,7 @@
                       </a>
                     </div>
                   {% endif %}
-                  <div>
+                  <div class="center-cart">
                     <a class="inline-block" href="{{ item.url }}">{{ item.product.title }}</a>
                     {% if settings.cart_vendor_enable %}
                       <p class="text-sm">{{ item.vendor }}</p>
@@ -104,14 +104,14 @@
                   </div>
                 </div>
               </td>
-              <td data-price data-label="{{ 'cart.label.price' | t }}">
+              <td data-price data-label="{{ 'cart.label.price' | t }}" style="position: relative;">
                 {% if item.original_line_price != item.line_price %}
                   <span class="visually-hidden">{{ 'cart.label.discounted_price' | t }}</span>
-                  <div class="qb-price-item" data-id="{{ item.key }}">{{ item.price | money }}</div>
+                  <div class="qb-price-item center-cart--absolute" data-id="{{ item.key }}">{{ item.price | money }}</div>
                   <span class="visually-hidden">{{ 'cart.label.original_price' | t }}</span>
-                  <s><div class="qb-price-item" data-id="{{ item.key }}">{{ item.original_price | money }}</div></s>
+                  <s><div class="qb-price-item center-cart--absolute" data-id="{{ item.key }}">{{ item.original_price | money }}</div></s>
                 {% else %}
-                  <div class="qb-price-item" data-id="{{ item.key }}">{{ item.price | money }}</div>
+                  <div class="qb-price-item center-cart--absolute" data-id="{{ item.key }}">{{ item.price | money }}</div>
                 {% endif %}
                 {%- if item.unit_price_measurement -%}
                   <div class="text-xs">
@@ -123,8 +123,8 @@
                   </div>
                 {%- endif -%}
               </td>
-              <td data-quantity data-label="{{ 'cart.label.quantity' | t }}">
-                <div class="flex  items-center hidden lg:block">
+              <td data-quantity data-label="{{ 'cart.label.quantity' | t }}" style="position: relative;">
+                <div class="flex  items-center hidden lg:block center-cart--absolute center-cart--flex">
                   <button
                     type="submit"
                     name="minus"
@@ -153,8 +153,8 @@
                   </button>
                 </div>
               </td>
-              <td data-total data-label="{{ 'cart.label.total' | t }}">
-                <div>
+              <td data-total data-label="{{ 'cart.label.total' | t }}" style="position: relative;">
+                <div class="center-cart--absolute">
                   {%- if item.original_line_price != item.final_line_price -%}
                     <del class=""><div class="qb-total-line-item" data-id="{{ item.key }}">{{ item.original_line_price | money }}</div></del>
                     <span class="">{{ item.final_line_price | money }}</span>

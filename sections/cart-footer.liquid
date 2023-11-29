@@ -1,6 +1,6 @@
 {%- assign section_color = 'primary' -%}
 <section id="main-cart-footer"  data-id="{{ section.id }}" class="{% if cart == empty %}hidden{% endif %}" data-color-scheme="{{ section_color }}">
-  <div class="md:grid md:grid-cols-12 section-x-padding pb-theme">
+  <div class="md:grid md:grid-cols-12 section-x-padding pb-theme padding-lr-0">
     {% if settings.cart_notes_enable %}
       <div class="mt-4 md:col-span-5">
         <label class="block cart-note--margin-top-30" for="CartSpecialInstructions">{{ 'cart.general.note' | t }}</label>
@@ -42,7 +42,7 @@
         {%- if settings.button_color == 'transparent_background_text_border' -%}
           {%- assign button_color = 'text_background' -%}
         {%- endif -%}
-        <input class="button cursor-pointer mt-2 lg:mt-0 l p-2 w-full {% render 'button-style' %} {% render 'button-color', section_color: section_color, button_color: button_color %}" type="submit" name="checkout" value="{{ 'cart.general.checkout' | t }}" form="cart">
+        <input class="cart-button--height button cursor-pointer mt-2 lg:mt-0 l p-2 w-full {% render 'button-style' %} {% render 'button-color', section_color: section_color, button_color: button_color %}" type="submit" name="checkout" value="{{ 'cart.general.checkout' | t }}" form="cart">
       </div>
 
       {% if additional_checkout_buttons and settings.cart_additional_buttons %}
