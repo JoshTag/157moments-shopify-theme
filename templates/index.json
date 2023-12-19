@@ -74,11 +74,29 @@
         "text_color_2": "primary",
         "text_style_2": "normal"
       }
+    },
+    "8a573d88-31df-44f9-aa84-370b85f1badd": {
+      "type": "video-with-text-overlay",
+      "settings": {
+        "video_url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/4891fc93e0a94ca7a9542fed203dd50d.mp4",
+        "video_style": "widescreen",
+        "video_style_desktop": "same",
+        "title": "",
+        "heading_size": "text-2xl lg:text-5xl",
+        "text": "",
+        "content_position": "justify-center items-center text-center",
+        "content_width_desktop": "lg:w-2\/3",
+        "text_color": "primary",
+        "cta_link": "",
+        "cta_text": "",
+        "cta_style": "link"
+      }
     }
   },
   "order": [
     "233ca68c-95dc-4156-9b85-bb57b955c999",
     "873c4c0d-dba3-42df-9a7d-73e8315cd0d3",
-    "7e819e66-7ef7-4314-b558-ff8669407d07"
+    "7e819e66-7ef7-4314-b558-ff8669407d07",
+    "8a573d88-31df-44f9-aa84-370b85f1badd"
   ]
 }
