@@ -74,21 +74,11 @@
         "text_color_2": "primary",
         "text_style_2": "normal"
       }
-    },
-    "b732bb1a-4c28-4891-91ac-d0913b07a0d0": {
-      "type": "video",
-      "settings": {
-        "title": "",
-        "video_url": "https:\/\/www.youtube.com\/watch?v=_mUvuXp6DIo&amp;autoplay=1&mute=1",
-        "aspect_ratio": "16:9",
-        "color_scheme": "primary"
-      }
     }
   },
   "order": [
     "233ca68c-95dc-4156-9b85-bb57b955c999",
     "873c4c0d-dba3-42df-9a7d-73e8315cd0d3",
-    "7e819e66-7ef7-4314-b558-ff8669407d07",
-    "b732bb1a-4c28-4891-91ac-d0913b07a0d0"
+    "7e819e66-7ef7-4314-b558-ff8669407d07"
   ]
 }
