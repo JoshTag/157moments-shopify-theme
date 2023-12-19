@@ -79,7 +79,7 @@
       "type": "video",
       "settings": {
         "title": "",
-        "video_url": "https:\/\/www.youtube.com\/watch?v=_mUvuXp6DIo&autoplay=1&mute=1",
+        "video_url": "https:\/\/www.youtube.com\/watch?v=_mUvuXp6DIo&amp;autoplay=1&mute=1",
         "aspect_ratio": "16:9",
         "color_scheme": "primary"
       }
