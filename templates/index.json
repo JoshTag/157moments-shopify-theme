@@ -1,5 +1,16 @@
 {
   "sections": {
+    "020a5fc8-f616-4c3b-9a6b-e0deeadbd795": {
+      "type": "video-split",
+      "settings": {
+        "image_size": "half",
+        "playlist_url_1": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/7e29ebede6d742ae8057c2e40d88bfd7.mp4",
+        "indent_video_1": true,
+        "playlist_url_2": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/7e29ebede6d742ae8057c2e40d88bfd7.mp4",
+        "indent_video_2": true,
+        "color_scheme": "primary"
+      }
+    },
     "233ca68c-95dc-4156-9b85-bb57b955c999": {
       "type": "image-split",
       "settings": {
@@ -77,6 +88,7 @@
     }
   },
   "order": [
+    "020a5fc8-f616-4c3b-9a6b-e0deeadbd795",
     "233ca68c-95dc-4156-9b85-bb57b955c999",
     "873c4c0d-dba3-42df-9a7d-73e8315cd0d3",
     "7e819e66-7ef7-4314-b558-ff8669407d07"
