@@ -137,6 +137,30 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     }
   </style>
   {% endif %}
+  {% if page.title == "Contact Us" %}
+    <style>
+      @media screen and (min-width: 768px) {
+        #MainContent {
+          max-width: 1440px;
+          height: calc(100vh - 80px);
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+        }
+        #MainContent > .shopify-section {
+          height: 100%;
+        }
+        #MainContent > .shopify-section > .page {
+          height: 100%;
+        }
+        #MainContent > .shopify-section > .page > div {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+        }
+      }
+    </style>
+    {% endif %}
 
   {% render 'script-tags', layout: 'theme' %}
 
@@ -161,7 +185,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N9VTXZD"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
-  
+
   <a class="in-page-link skip-link" href="#MainContent">{{ 'general.accessibility.skip_to_content' | t }}</a>
   {%- liquid
       section 'sidebar'
@@ -176,6 +200,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div id="sticky-positioner"></div>
     {% endif %}
     {% section 'header' %}
+
     <main role="main" id="MainContent">
       <!--LayoutHub-Workspace-Start-->{{ content_for_layout }}<!--LayoutHub-Workspace-End-->
     </main>
@@ -189,6 +214,28 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <li id="a11y-refresh-page-message">{{ 'general.accessibility.refresh_page' | t }}</li>
     <li id="a11y-selection-message">{{ 'general.accessibility.selection_help' | t }}</li>
   </ul>
+
+  <div class="hidden" id="weChatModal">
+    <h2 style="color: #ffffff">SCAN THE QR CODE TO FOLLOW OUR WECHAT ACCOUNT</h2>
+    <img src="https://cdn.shopify.com/s/files/1/0654/0725/4745/files/1703814292664-157Moments_WeChat.jpg?v=1703891203"/>
+  </div>
+
+  <script>
+    let weChat = document.getElementById("weChatButton");
+    let weChatModal = document.getElementById("weChatModal");
+    weChat.addEventListener("click", function() {
+      console.log("========CLICK=========")
+      document.body.style.overflow = "hidden";
+      weChatModal.classList.remove("hidden");
+      weChatModal.style.display = "flex";
+    })
+
+    weChatModal.addEventListener("click", function() {
+      document.body.style.overflow = "";
+      weChatModal.classList.add("hidden");
+      weChatModal.style.display = "";
+    })
+  </script>
 
   <script>
     window.theme = {

@@ -93,7 +93,10 @@
                         name="plus_mobile"
                         class="w-6 p-1 js-enabled"
                         @click.prevent="qtyAdjust($event, 1, 'quantity_{{ item.key | replace: ':', '' }}')"
-                        :aria-label="'{{ 'general.accessibility.increment_one' | t }} ' + '{{ item.title }}'">
+                        :aria-label="'{{ 'general.accessibility.increment_one' | t }} ' + '{{ item.title }}'"
+                        data-product-id="{{ item.id }}"
+                        data-cart-amount="{{ item.quantity }}"
+                        data-product-inventory="{{ item.variant.inventory_quantity }}">
                       {% render 'icon-plus' %}
                       </button>
                     </div>
@@ -148,10 +151,14 @@
                     type="submit"
                     class="w-6 p-1 align-middle js-enabled"
                     @click.prevent="qtyAdjust($event, 1, 'quantity_{{ item.key | replace: ':', '' }}')"
-                    :aria-label="'{{ 'general.accessibility.increment_one' | t }} ' + '{{ item.title }}'">
+                    :aria-label="'{{ 'general.accessibility.increment_one' | t }} ' + '{{ item.title }}'"
+                    data-product-id="{{ item.id }}"
+                    data-cart-amount="{{ item.quantity }}"
+                    data-product-inventory="{{ item.variant.inventory_quantity }}">
                   {% render 'icon-plus' %}
                   </button>
-                </div>
+                  </div>
+                  <div class="cart-error--custom-message text-scheme-accent" id="cart-error__{{ item.id }}"></div>
               </td>
               <td data-total data-label="{{ 'cart.label.total' | t }}" style="position: relative;">
                 <div class="center-cart--absolute">

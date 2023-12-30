@@ -1,0 +1,233 @@
+{%- liquid
+assign indent_video_1 = section.settings.indent_video_1
+assign indent_video_2 = section.settings.indent_video_2
+assign color_scheme = section.settings.color_scheme
+assign component_id = 'background-video-' | append: section.id
+-%}
+
+{% comment %} https://www.youtube.com/watch?v=g1-PcGvYOi4&list=PLpSUuRC0y32YtGmTO6xUmw7jZFss0vfqW
+https://www.youtube.com/embed/?autoplay=1&mute=1&controls=0&loop=1&list=PLpSUuRC0y32YtGmTO6xUmw7jZFss0vfqW
+https://www.youtube.com/embed/?autoplay=1&mute=1&controls=0&loop=1&list=PLpSUuRC0y32aocSV6TXzewppPSKftpBlc
+{% endcomment %}
+
+<style>
+.video-container {
+  position: relative;
+  aspect-ratio: 9 / 16;
+  width: 100%;
+  overflow: hidden;
+
+}
+.video-container--iframe {
+  /* position: absolute;
+  top: 50%;
+  left: 50%;
+  aspect-ratio: 9 / 16;
+  width: 100%;
+  transform: translate(-50%, -50%);
+  margin-top: -60px; */
+}
+#play_right,
+#play_left {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  bottom: 0px;
+}
+.video-container:hover #mute_button_right,
+.video-container:hover #mute_button_left {
+  opacity: 1;
+  transition: opacity .3s ease-in;
+}
+#mute_button_right,
+#mute_button_left {
+  position: absolute;
+  height: 65px;
+  width: 65px;
+  top: 0px;
+  left: 0px;
+  z-index: 10;
+  opacity: 0;
+}
+.mute-icon,
+.unmute-icon {
+  position: absolute;
+  top: 20px;
+  width: 35px;
+  fill: #ffffff;
+}
+.mute-icon {
+  left: 22px;
+}
+.unmute-icon {
+  left: 20px;
+}
+.mute-icon.hidden,
+.unmute-icon.hidden {
+  display: none;
+}
+</style>
+
+<section class="overflow-hidden border-t-grid border-grid-color">
+  <div class="grid grid-cols-1 lg:grid-cols-12 bg-border gap-gutter">
+    <div class="{% if i == 1 %}{{ image_width_1 }}{% else %}{{ image_width_2 }}{% endif %}lg:col-span-6  bg-scheme-background relative overflow-hidden" data-color-scheme="{{ color_scheme }}">
+      <div class="block h-full w-full {% unless settings.fill_image_to_border_edge %}p-2 lg:p-4{% endunless %} {% if indent_video_1 %}p-8 lg:p-16{% endif %}">
+        <div class="video-container">
+          <video id="videoLeft" class="video-container--iframe" autoplay muted loop playsinline>
+          {% comment %}theme-check-disable RemoteAsset{% endcomment %}
+          <source src="{{ section.settings.playlist_url_1 }}" type="video/mp4">
+          {% comment %}theme-check-enable RemoteAsset{% endcomment %}
+            {%- if fallback_image -%}
+            {%- render 'image-object' with
+                image: fallback_image
+            -%}
+            {%- endif -%}
+            Sorry, your browser doesn't support embedded videos.
+          </video>
+          <button id="play_left" onclick="playPause('videoLeft')"></button>
+          <button id="mute_button_left">
+            <span class="mute-icon">{% render 'icon-mute' %}</span>
+            <span class="hidden unmute-icon">{% render 'icon-unmute' %}</span>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="{% if i == 1 %}{{ image_width_1 }}{% else %}{{ image_width_2 }}{% endif %}lg:col-span-6  bg-scheme-background relative overflow-hidden" data-color-scheme="{{ color_scheme }}">
+      <div class="block h-full w-full {% unless settings.fill_image_to_border_edge %}p-2 lg:p-4{% endunless %} {% if indent_video_2 %}p-8 lg:p-16{% endif %}">
+        <div class="video-container">
+          <video id="videoRight" class="video-container--iframe" autoplay muted loop playsinline>
+          {% comment %}theme-check-disable RemoteAsset{% endcomment %}
+          <source src="{{ section.settings.playlist_url_2 }}" type="video/mp4">
+          {% comment %}theme-check-enable RemoteAsset{% endcomment %}
+            {%- if fallback_image -%}
+            {%- render 'image-object' with
+                image: fallback_image
+            -%}
+            {%- endif -%}
+            Sorry, your browser doesn't support embedded videos.
+          </video>
+          <button id="play_right" onclick="playPause('videoRight')"></button>
+          <button id="mute_button_right">
+            <span class="mute-icon">{% render 'icon-mute' %}</span>
+            <span class="hidden unmute-icon">{% render 'icon-unmute' %}</span>
+          </button>
+          {% comment %} <iframe class="video-container--iframe" src="https://www.youtube.com/embed/?autoplay=1&mute=1&controls=0&loop=1&list={{ section.settings.playlist_url_2 }}"></iframe> {% endcomment %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+function playPause(videoId) {
+  let video = document.getElementById(videoId);
+  if (video.paused == true) {
+    video.play();
+  } else {
+    video.pause();
+  }
+}
+
+let muteRight = document.getElementById('mute_button_right');
+let muteLeft = document.getElementById('mute_button_left');
+muteRight.addEventListener("click", (e) => muteUnmute(e, "videoRight"));
+muteLeft.addEventListener("click", (e) => muteUnmute(e, "videoLeft"));
+
+function muteUnmute(e, videoId){
+  let video = document.getElementById(videoId);
+  let muteIcon = e.target.querySelector(".mute-icon");
+  let unmuteIcon = e.target.querySelector(".unmute-icon");
+  if (video.muted === true) {
+    video.muted = false;
+    muteIcon.classList.add("hidden");
+    unmuteIcon.classList.remove("hidden");
+  } else {
+    video.muted = true;
+    unmuteIcon.classList.add("hidden");
+    muteIcon.classList.remove("hidden");
+  }
+}
+
+</script>
+
+{% schema %}
+  {
+    "name": "Video split",
+    "settings": [
+      {
+        "type": "select",
+        "id": "image_size",
+        "label": "Left image width on desktop",
+        "default": "half",
+        "options": [
+          {
+            "value": "third",
+            "label": "One third"
+          },
+          {
+            "value": "half",
+            "label": "One half"
+          },
+          {
+            "value": "two_thirds",
+            "label": "Two thirds"
+          },
+          {
+            "value": "two_fifths",
+            "label": "Two fifths"
+          },
+          {
+            "value": "three_fifths",
+            "label": "Three fifths"
+          }
+        ]
+      },
+      {
+        "type":      "header",
+        "content":   "Left video"
+      },
+      {
+        "id": "playlist_url_1",
+        "type": "text",
+        "label": "mp4 link",
+        "info": "Paste mp4 link from shopify here"
+      },
+      {
+        "type": "checkbox",
+        "id": "indent_video_1",
+        "label": "Indent video 1",
+        "default": false
+      },
+      {
+        "type":      "header",
+        "content":   "Right video"
+      },
+      {
+        "id": "playlist_url_2",
+        "type": "text",
+        "label": "mp4 link",
+        "info": "Paste mp4 link from shopify here"
+      },
+      {
+        "type": "checkbox",
+        "id": "indent_video_2",
+        "label": "Indent video 2",
+        "default": false
+      },
+      {
+        "type": "select",
+        "id": "color_scheme",
+        "label": "Background color",
+        "options": [
+            { "value": "primary", "label": "Primary background"},
+            { "value": "secondary", "label": "Secondary background"},
+            { "value": "tertiary", "label": "Tertiary background"}
+        ],
+        "default":   "primary"
+      }
+    ],
+    "presets": [{
+      "name": "Video split"
+    }]
+  }
+{% endschema %}

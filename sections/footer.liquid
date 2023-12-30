@@ -133,7 +133,7 @@
             {%- if section.settings.social_title != blank %}
               <h2 class="font-heading text-base mb-4">{{ section.settings.social_title }}</h2>
             {% endif %}
-            {% render 'social-icons' with social_style: social_style, link_class: "mb-1", section_color: section_color %}
+            {% render 'footer-social-links' with social_style: social_style, link_class: "mb-1", section_color: section_color %}
           </div>
         </div>
       {% endif %}
