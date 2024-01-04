@@ -161,6 +161,21 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       }
     </style>
     {% endif %}
+    {% if template contains "customers/login" %}
+    <style>
+      @media screen and (min-width: 768px) {
+        #MainContent {
+          height: calc(100vh - 80px - 6rem);
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+        }
+        #MainContent div {
+          min-width: 500px;
+        }
+      }
+    </style>
+    {% endif %}
 
   {% render 'script-tags', layout: 'theme' %}
 

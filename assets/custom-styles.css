@@ -221,3 +221,7 @@
 #weChatModal:hover:before {
   cursor: pointer;
 }
+
+#ContactForm > input[type="submit"] {
+  width: 100% !important;
+}
