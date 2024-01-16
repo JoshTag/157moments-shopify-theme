@@ -133,15 +133,17 @@ h1.product-title-block{
   .sidebar-container > nav > ul:first-of-type > li:first-child{
     font-size: 1.2rem !important; 
     color: #d80a17;
+    color: #034f20;
     font-weight: bold;
   }
-}
+} 
 
 /* ------Sale design - desktop(first element in the navigation bar) ------ */
 @media(min-width:768px){
    ul.flex.flex-wrap.self-stretch.items-stretch.justify-end > li:first-child{
     font-size: 1.2rem !important; 
     color: #d80a17;
+      color: #034f20;
     font-weight: bold;
   }
 }

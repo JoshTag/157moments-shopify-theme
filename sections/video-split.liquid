@@ -30,9 +30,11 @@ https://www.youtube.com/embed/?autoplay=1&mute=1&controls=0&loop=1&list=PLpSUuRC
 #play_right,
 #play_left {
   position: absolute;
-  height: 65px;
-  width: 65px;
-  bottom: 0px;
+  height: 85px;
+  width: 85px;
+  bottom: 50%;
+  left: 50%;
+  transform: translate(-50%, 50%);
 }
 .video-container:hover #mute_button_right,
 .video-container:hover #mute_button_left {
@@ -74,9 +76,10 @@ https://www.youtube.com/embed/?autoplay=1&mute=1&controls=0&loop=1&list=PLpSUuRC
 .play-icon,
 .pause-icon {
   position: absolute;
-  left: 15px;
-  bottom: 15px;
-  width: 35px;
+  left: 50%;
+  bottom: 50%;
+  width: 85px;
+  transform: translate(-50%, 50%);
 }
 .play-icon svg,
 .pause-icon svg {

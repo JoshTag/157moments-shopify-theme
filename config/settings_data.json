@@ -13,7 +13,7 @@
     "color_tertiary_background": "#f8f8f8",
     "color_tertiary_accent": "#5c5c5c",
     "color_tertiary_meta": "#9d9d9d",
-    "button_color": "transparent_background_text_border",
+    "button_color": "text_background",
     "button_style": "square",
     "base_font_size": 16,
     "font_heading": "sans-serif",
@@ -47,7 +47,7 @@
     "enable_color_swatches": false,
     "enable_breadcrumbs": false,
     "sharing_display": "text",
-    "social_style": "text",
+    "social_style": "icons",
     "social_instagram_link": "https:\/\/www.instagram.com\/157moments\/",
     "social_facebook_link": "https:\/\/www.facebook.com\/157Moments",
     "social_twitter_link": "",
@@ -58,6 +58,7 @@
     "social_youtube_link": "",
     "social_vimeo_link": "",
     "social_email_link": "info@157moments.com",
+    "cart_additional_buttons": false,
     "cart_vendor_enable": true,
     "cart_color_scheme": "primary",
     "favicon": "shopify:\/\/shop_images\/Screen_Shot_2022-10-08_at_3.55.29_PM_662fe9f0-99a7-4adf-adda-d84135866fb3.png",
@@ -169,6 +170,18 @@
         "type": "shopify:\/\/apps\/gdpr-ccpa-cookie-management\/blocks\/gdpr_cookie_consent\/4fbe573f-a377-4fea-9801-3ee0858cae41",
         "disabled": false,
         "settings": {
+        }
+      },
+      "15683396631634586217": {
+        "type": "shopify:\/\/apps\/inbox\/blocks\/chat\/841fc607-4181-4ad1-842d-e24d7f8bad6b",
+        "disabled": true,
+        "settings": {
+          "button_color": "#000000",
+          "button_icon": "chat_bubble",
+          "button_horizontal_position": "bottom_right",
+          "button_vertical_position": "lowest",
+          "button_text": "no_text",
+          "greeting_message": "👋 Hi, message us with any questions. We're happy to help!"
         }
       }
     }

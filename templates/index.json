@@ -1,17 +1,56 @@
 {
   "sections": {
-    "020a5fc8-f616-4c3b-9a6b-e0deeadbd795": {
-      "type": "video-split",
+    "233ca68c-95dc-4156-9b85-bb57b955c999": {
+      "type": "image-split",
       "settings": {
         "image_size": "half",
-        "playlist_url_1": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/7e29ebede6d742ae8057c2e40d88bfd7.mp4",
-        "indent_video_1": true,
-        "playlist_url_2": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/7e29ebede6d742ae8057c2e40d88bfd7.mp4",
-        "indent_video_2": true,
-        "color_scheme": "primary"
+        "image_1": "shopify:\/\/shop_images\/4_5_logo__1_26_1.jpg",
+        "indent_image_1": true,
+        "crop": "0",
+        "link_1": "shopify:\/\/collections\/documents",
+        "color_scheme_1": "primary",
+        "caption_1": "",
+        "content_position_1": "justify-center items-center text-center",
+        "text_color_1": "primary",
+        "text_style_1": "normal",
+        "image_2": "shopify:\/\/shop_images\/4_5_logo__1_46_1.jpg",
+        "preserve_ratio_2": false,
+        "indent_image_2": true,
+        "link_2": "shopify:\/\/collections\/documents",
+        "color_scheme_2": "secondary",
+        "caption_2": "",
+        "content_position_2": "justify-center items-center text-center",
+        "text_alignment_2": "text-left",
+        "text_color_2": "primary",
+        "text_style_2": "normal"
       }
     },
-    "233ca68c-95dc-4156-9b85-bb57b955c999": {
+    "873c4c0d-dba3-42df-9a7d-73e8315cd0d3": {
+      "type": "image-split",
+      "settings": {
+        "image_size": "half",
+        "image_1": "shopify:\/\/shop_images\/fafamoon23ss-11073_2.jpg",
+        "indent_image_1": true,
+        "crop": "0",
+        "link_1": "shopify:\/\/collections\/fafamoon",
+        "color_scheme_1": "primary",
+        "caption_1": "",
+        "content_position_1": "justify-center items-center text-center",
+        "text_color_1": "primary",
+        "text_style_1": "normal",
+        "image_2": "shopify:\/\/shop_images\/fafamoon23ss-11032__2.jpg",
+        "preserve_ratio_2": false,
+        "indent_image_2": true,
+        "link_2": "shopify:\/\/collections\/fafamoon",
+        "color_scheme_2": "secondary",
+        "caption_2": "",
+        "content_position_2": "justify-center items-center text-center",
+        "text_alignment_2": "text-left",
+        "text_color_2": "primary",
+        "text_style_2": "normal"
+      }
+    },
+    "c0fd6307-e395-4436-8c0d-6a59998eccf0": {
       "type": "image-split",
       "settings": {
         "image_size": "half",
@@ -28,31 +67,6 @@
         "preserve_ratio_2": false,
         "indent_image_2": true,
         "link_2": "shopify:\/\/collections\/amomento-men",
-        "color_scheme_2": "secondary",
-        "caption_2": "",
-        "content_position_2": "justify-center items-center text-center",
-        "text_alignment_2": "text-left",
-        "text_color_2": "primary",
-        "text_style_2": "normal"
-      }
-    },
-    "873c4c0d-dba3-42df-9a7d-73e8315cd0d3": {
-      "type": "image-split",
-      "settings": {
-        "image_size": "half",
-        "image_1": "shopify:\/\/shop_images\/1202308090666.png",
-        "indent_image_1": false,
-        "crop": "0",
-        "link_1": "shopify:\/\/collections\/fafamoon",
-        "color_scheme_1": "primary",
-        "caption_1": "",
-        "content_position_1": "justify-center items-center text-center",
-        "text_color_1": "primary",
-        "text_style_1": "normal",
-        "image_2": "shopify:\/\/shop_images\/202308091608.png",
-        "preserve_ratio_2": false,
-        "indent_image_2": false,
-        "link_2": "shopify:\/\/collections\/fafamoon",
         "color_scheme_2": "secondary",
         "caption_2": "",
         "content_position_2": "justify-center items-center text-center",
@@ -88,9 +102,9 @@
     }
   },
   "order": [
-    "020a5fc8-f616-4c3b-9a6b-e0deeadbd795",
     "233ca68c-95dc-4156-9b85-bb57b955c999",
     "873c4c0d-dba3-42df-9a7d-73e8315cd0d3",
+    "c0fd6307-e395-4436-8c0d-6a59998eccf0",
     "7e819e66-7ef7-4314-b558-ff8669407d07"
   ]
 }

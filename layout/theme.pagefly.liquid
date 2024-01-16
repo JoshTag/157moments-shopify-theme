@@ -125,6 +125,23 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     {{ body_font_bold_italic | font_face: font_display: 'swap' }}
   </style>
 
+  {% if template == "cart" %}
+  <style>
+    @media screen and (min-width: 768px) {
+      #MainContent {
+        max-width: 1440px;
+        padding: 0 5rem;
+        border-left: none !important;
+        border-right: none !important;
+        min-height: calc(100vh - 80px);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+    }
+  </style>
+  {% endif %}
+
   {% render 'script-tags', layout: 'theme' %}
 
   {{ content_for_header }}
