@@ -1,6 +1,44 @@
 {
   "sections": {
+    "7e1d3feb-f507-4986-a59c-c43542dbd340": {
+      "type": "video-split",
+      "settings": {
+        "image_size": "half",
+        "playlist_url_1": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/c1c1fd40b8834d41bf79f98c157276f2.mp4",
+        "collectink_link_1": "fafamoon",
+        "indent_video_1": true,
+        "playlist_url_2": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/656353d26a714afda5d35c88f8a0b2f9.mp4",
+        "collectink_link_2": "fafamoon",
+        "indent_video_2": true,
+        "color_scheme": "primary"
+      }
+    },
     "233ca68c-95dc-4156-9b85-bb57b955c999": {
+      "type": "image-split",
+      "settings": {
+        "image_size": "half",
+        "image_1": "shopify:\/\/shop_images\/IMG_6082_8941c2a5-dd43-4d9e-83d8-4a10bce08838.jpg",
+        "indent_image_1": true,
+        "crop": "0",
+        "link_1": "shopify:\/\/collections\/eunoia",
+        "color_scheme_1": "primary",
+        "caption_1": "",
+        "content_position_1": "justify-center items-center text-center",
+        "text_color_1": "primary",
+        "text_style_1": "normal",
+        "image_2": "shopify:\/\/shop_images\/7P2A0706_3394370a-367a-4531-87d1-d3f15c327198.jpg",
+        "preserve_ratio_2": false,
+        "indent_image_2": true,
+        "link_2": "shopify:\/\/collections\/eunoia",
+        "color_scheme_2": "secondary",
+        "caption_2": "",
+        "content_position_2": "justify-center items-center text-center",
+        "text_alignment_2": "text-left",
+        "text_color_2": "primary",
+        "text_style_2": "normal"
+      }
+    },
+    "a7c0ed5f-131f-4f06-9438-c6caa66cbac4": {
       "type": "image-split",
       "settings": {
         "image_size": "half",
@@ -24,87 +62,11 @@
         "text_color_2": "primary",
         "text_style_2": "normal"
       }
-    },
-    "873c4c0d-dba3-42df-9a7d-73e8315cd0d3": {
-      "type": "image-split",
-      "settings": {
-        "image_size": "half",
-        "image_1": "shopify:\/\/shop_images\/fafamoon23ss-11073_2.jpg",
-        "indent_image_1": true,
-        "crop": "0",
-        "link_1": "shopify:\/\/collections\/fafamoon",
-        "color_scheme_1": "primary",
-        "caption_1": "",
-        "content_position_1": "justify-center items-center text-center",
-        "text_color_1": "primary",
-        "text_style_1": "normal",
-        "image_2": "shopify:\/\/shop_images\/fafamoon23ss-11032__2.jpg",
-        "preserve_ratio_2": false,
-        "indent_image_2": true,
-        "link_2": "shopify:\/\/collections\/fafamoon",
-        "color_scheme_2": "secondary",
-        "caption_2": "",
-        "content_position_2": "justify-center items-center text-center",
-        "text_alignment_2": "text-left",
-        "text_color_2": "primary",
-        "text_style_2": "normal"
-      }
-    },
-    "c0fd6307-e395-4436-8c0d-6a59998eccf0": {
-      "type": "image-split",
-      "settings": {
-        "image_size": "half",
-        "image_1": "shopify:\/\/shop_images\/Screenshot_2023-11-01_at_3.13.53_PM.jpg",
-        "indent_image_1": true,
-        "crop": "0",
-        "link_1": "shopify:\/\/collections\/amomento-women-unisex",
-        "color_scheme_1": "primary",
-        "caption_1": "",
-        "content_position_1": "justify-center items-center text-center",
-        "text_color_1": "primary",
-        "text_style_1": "normal",
-        "image_2": "shopify:\/\/shop_images\/Screenshot_2023-11-01_at_3.15.43_PM.jpg",
-        "preserve_ratio_2": false,
-        "indent_image_2": true,
-        "link_2": "shopify:\/\/collections\/amomento-men",
-        "color_scheme_2": "secondary",
-        "caption_2": "",
-        "content_position_2": "justify-center items-center text-center",
-        "text_alignment_2": "text-left",
-        "text_color_2": "primary",
-        "text_style_2": "normal"
-      }
-    },
-    "7e819e66-7ef7-4314-b558-ff8669407d07": {
-      "type": "image-split",
-      "settings": {
-        "image_size": "half",
-        "image_1": "shopify:\/\/shop_images\/Screenshot_2023-11-01_at_2.08.07_PM.jpg",
-        "indent_image_1": true,
-        "crop": "0",
-        "link_1": "shopify:\/\/collections\/soft-mountains",
-        "color_scheme_1": "primary",
-        "caption_1": "",
-        "content_position_1": "justify-center items-center text-center",
-        "text_color_1": "primary",
-        "text_style_1": "normal",
-        "image_2": "shopify:\/\/shop_images\/Screenshot_2023-11-01_at_2.09.04_PM.jpg",
-        "preserve_ratio_2": true,
-        "indent_image_2": true,
-        "link_2": "shopify:\/\/collections\/soft-mountains",
-        "color_scheme_2": "secondary",
-        "caption_2": "",
-        "content_position_2": "justify-center items-center text-center",
-        "text_alignment_2": "text-left",
-        "text_color_2": "primary",
-        "text_style_2": "normal"
-      }
     }
   },
   "order": [
+    "7e1d3feb-f507-4986-a59c-c43542dbd340",
     "233ca68c-95dc-4156-9b85-bb57b955c999",
-    "873c4c0d-dba3-42df-9a7d-73e8315cd0d3",
-    "c0fd6307-e395-4436-8c0d-6a59998eccf0",
-    "7e819e66-7ef7-4314-b558-ff8669407d07"
+    "a7c0ed5f-131f-4f06-9438-c6caa66cbac4"
   ]
 }

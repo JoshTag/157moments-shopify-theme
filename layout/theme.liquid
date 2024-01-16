@@ -139,9 +139,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   {% endif %}
   {% if page.title == "Contact Us" %}
     <style>
-      @media screen and (min-width: 768px) {
+      @media screen and (min-width: 1024px) {
         #MainContent {
-          max-width: 1440px;
           height: calc(100vh - 80px);
           display: flex;
           flex-direction: column;
@@ -149,14 +148,23 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         }
         #MainContent > .shopify-section {
           height: 100%;
+          display: flex;
+          justify-content: center
         }
         #MainContent > .shopify-section > .page {
           height: 100%;
+          width: 100%;
         }
         #MainContent > .shopify-section > .page > div {
           display: flex;
           flex-direction: column;
           justify-content: center;
+          flex-wrap: wrap;
+          align-items: center;
+        }
+        #MainContent > .shopify-section > .page > div > form {
+          width: 70%;
+          min-width: 450px;
         }
       }
     </style>
