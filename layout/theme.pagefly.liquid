@@ -14,7 +14,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 })(window,document,'script','dataLayer','GTM-N9VTXZD');</script>
 <!-- End Google Tag Manager -->
   
- {%- render 'layouthub_header' -%}{% render 'pagefly-head' %}
+ {%- render 'layouthub_header' -%}
   <meta name="google-site-verification" content="isqq43yL1m-IQVBggJlvNmmEpg4JG-P2eVk8imERJ2U" />
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -204,7 +204,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
   gtag('config', 'G-ZC8JV0LNWB');
 </script>
-</head>
 
-<body id="{{ page_title | handle }}" class="template-{{ template.name | handle }} {% if settings.buttons_show_arrow %}show-button-arrows{% endif %}"><div class="pagefly-container">{{ content_for_layout }}</div></body>
+{% include 'pagefly-app-header' %}</head>
+
+<body id="{{ page_title | handle }}" class="template-{{ template.name | handle }} {% if settings.buttons_show_arrow %}show-button-arrows{% endif %}"><div class="pagefly-container">
+              {{ content_for_layout }}
+            </div></body>
 </html>

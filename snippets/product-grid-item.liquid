@@ -141,7 +141,7 @@
     <div class="{% if settings.product_grid_uppercase %}uppercase{% endif %} {% if title_price_display == 'on_hover' or title_price_display contains 'over_image' %}absolute {% if settings.fill_image_to_border_edge %}{% if title_price_display == 'over_image_top' %}top-0{% else %}bottom-0{% endif %} left-0 right-0{% else %}left-4 right-4 {% if title_price_display == 'over_image_top' %}top-4{% else %}bottom-4{% endif %}{% endif %}{% endif %} {% if title_price_display == 'on_hover' %}product-grid__meta opacity-0 group-hover:opacity-100 {% if settings.fill_image_to_border_edge %}border-t-grid border-grid-color  bg-scheme-background {% endif %}  transition-opacity duration-200 ease-in-out text-scheme-text {% endif %} py-4 {% if reduce_gutter %}px-1 lg:px-2{% else %}section-x-padding{% endif %} justify-between {{ layout_class }}">
       <div class="{{ title_class }} break-words">
         {% if settings.product_grid_show_vendor and product.vendor != '' %}
-          <p class="vendor mb-1 text-scheme-meta {% if sold_out %} line-through{% endif %} {{ product.vendor }}">{% if product.vendor contains "LOW CLASSIC" %}LOW CLASSIC{% else %}{{ product.vendor | remove: "/Women" | remove: "/Men" }}{% endif %}</p>
+          <p class="vendor mb-1 text-scheme-meta {% if sold_out %} line-through{% endif %} {{ product.vendor }}">{% if product.vendor contains "LOW CLASSIC" %}LOW CLASSIC{% elsif product.vendor contains "ROARINGWILD" %}ROARINGWILD{% else %}{% else %}{{ product.vendor | remove: "/Women" | remove: "/Men" }}{% endif %}</p>
         {% endif %}
         <p  aria-hidden="true" class="product-grid-title {% if sold_out %}text-scheme-meta line-through{% endif %}">{{ product.title }}</p>
       </div>

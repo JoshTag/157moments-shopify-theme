@@ -220,12 +220,13 @@
   top: 0px;
   left: 0px;
   background: rgba(0,0,0,0.7);
-  height: 100vh;
+  height: 100dvh;
   width: 100vw;
   z-index: 10000;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding: 0 16px;
 }
 
 #weChatModal h2 {
