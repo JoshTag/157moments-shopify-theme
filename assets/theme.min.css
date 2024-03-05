@@ -129,24 +129,24 @@ h1.product-title-block{
 } */
 
 /* ------Sale design - mobile(first element in the navigation bar) ------ */
-@media(max-width:768px){
+/* @media(max-width:768px){
   .sidebar-container > nav > ul:first-of-type > li:first-child{
     font-size: 1.2rem !important; 
     color: #dd3224;
   
     font-weight: bold;
   }
-} 
+}  */
 
 /* ------Sale design - desktop(first element in the navigation bar) ------ */
-@media(min-width:768px){
+/* @media(min-width:768px){
    ul.flex.flex-wrap.self-stretch.items-stretch.justify-end > li:first-child{
     font-size: 1.2rem !important; 
     color: #dd3224;
 
     font-weight: bold;
   }
-}
+} */
 
 @media(min-width:768px) {
   #menu0 ul:first-child {

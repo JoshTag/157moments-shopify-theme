@@ -15,6 +15,7 @@
         </a>
         {%- endif -%}
       </h1>
+    {% comment %}
     {%- when 'vendor' -%}
      {%- liquid
         assign use_collection_vendor_link = false
@@ -26,7 +27,7 @@
         endfor
       -%}
       {%- if use_collection_vendor_link -%}
-      <p {{ block.shopify_attributes }} class="vendor relative z-10 product-vendor-block"><a class="text-base mt-4 text-scheme-meta" href="{{ vendor_collection.url }}">{% if vendor_collection.title contains "ROARINGWILD" %}ROARINGWILD{% endif %}{% if vendor_collection.title contains "LOW CLASSIC" %}LOW CLASSIC{% else %}{{ vendor_collection.title   | remove: "/Women" | remove: "/Men" | remove: "/Unisex" | remove: "/HOME" | remove: "/JEWELRY" }}{% endif %}</a></p>
+      <p {{ block.shopify_attributes }} class="vendor relative z-10 product-vendor-block"><a class="text-base mt-4 text-scheme-meta" href="{{ vendor_collection.url }}">{% if vendor_collection.title contains "ROARINGWILD" %}ROARINGWILD{% elsif vendor_collection.title contains "LOW CLASSIC" %}LOW CLASSIC{% elsif vendor_collection.title contains "DESCENTE ALLTERRAIN" %}DESCENTE ALLTERRAIN{% else %}{{ vendor_collection.title   | remove: "/Women" | remove: "/Men" | remove: "/Unisex" | remove: "/HOME" | remove: "/JEWELRY" }}{% endif %}</a></p>
       {%- else -%}
       {%- liquid
         assign collection_handle = product.vendor | handle
@@ -42,8 +43,9 @@
           assign collection_link = collection.url
         endif
       -%}
-      <p {{ block.shopify_attributes }} class="vendor relative z-10 product-vendor-block text-base mt-4 text-scheme-meta"><a class="text-base mt-4 text-scheme-meta" href="{{ collection_link }}">{% if product.vendor contains "LOW CLASSIC" %}LOW CLASSIC{% elsif product.vendor contains "ROARINGWILD" %}ROARINGWILD{% else %}{{ product.vendor | remove: "/Women" | remove: "/Men" | remove: "/Unisex" | remove: "/HOME" | remove: "/JEWELRY"  }}{% endif %}</a></p>
+      <p {{ block.shopify_attributes }} class="vendor relative z-10 product-vendor-block text-base mt-4 text-scheme-meta"><a class="text-base mt-4 text-scheme-meta" href="{{ collection_link }}">{% if product.vendor contains "LOW CLASSIC" %}LOW CLASSIC{% elsif product.vendor contains "ROARINGWILD" %}ROARINGWILD{% elsif product.vendor contains "DESCENTE ALLTERRAIN" %}DESCENTE ALLTERRAIN{% else %}{{ product.vendor | remove: "/Women" | remove: "/Men" | remove: "/Unisex" | remove: "/HOME" | remove: "/JEWELRY"  }}{% endif %}</a></p>
       {%- endif -%}
+    {% endcomment %}
     {%- when 'price' -%}
       {%- liquid
         if settings.template_heading_size contains "lg:"
