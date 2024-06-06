@@ -94,6 +94,7 @@
               {% if collection_menu == blank %}
                 {% for collection in product.collections %}
                   {% assign collection_title = collection %}
+                    <p>{{ collection_title }}</p>
                   {% if product.vendor contains collection_title %}
                     tets
                   {% endif %}
