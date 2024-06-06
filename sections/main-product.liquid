@@ -101,7 +101,7 @@
                       {% assign collection_menu = "Womenswear" %}
                     {% elsif collection.title contains "Menswear" %}
                       {% assign collection_menu = "Menswear" %}
-                    {% else %}
+                    {% elsif collection.title contains "Home" %}
                       {% assign collection_menu = "Home" %}
                     {% endif %}
                     {{ collection_menu }}
