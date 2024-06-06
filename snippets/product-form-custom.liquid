@@ -46,7 +46,7 @@
       {% endfor %}
         <p {{ block.shopify_attributes }} class="vendor--mobile vendor relative z-10 product-vendor-block text-base mt-4 text-scheme-meta">
           <a class="text-base mt-4 text-scheme-meta" href="{{ vendor_collection_url }}">
-            {{ vendor_collection_title }}
+            {{ vendor_collection_title }}-{{ product.vendor }}
           </a>
         </p>
     {%- when 'price' -%}
