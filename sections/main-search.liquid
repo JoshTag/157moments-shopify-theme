@@ -263,7 +263,7 @@
         {% endif %}
 
         <div class="{% if article_results or page_results %}lg:col-span-9{% else %}lg:col-span-12{% endif %} bg-scheme-background text-scheme-text">
-          <ul class="grid grid-cols-1 lg:grid-cols-3 gap-gutter bg-border h-full">
+          <ul class="grid grid-cols-1 lg:grid-cols-4 gap-gutter bg-border h-full">
             {% assign counter = 0 %}
             {% for item in search.results %}
               {% if item.object_type == 'product' %}
