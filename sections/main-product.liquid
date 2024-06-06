@@ -94,6 +94,7 @@
               {% if collection_menu == blank %}
                 {% for collection in product.collections %}
                   {% assign collection_title = collection | remove: "- Womenswear" | remove: "- Menswear" %}
+                  {{ collection_title }}
                   {% if product.vendor contains collection_title %}
                     tets
                   {% endif %}
