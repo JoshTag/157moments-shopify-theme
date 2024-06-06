@@ -94,8 +94,7 @@
               {% if collection_menu == blank %}
                 {% for collection in product.collections %}
                   {% assign collection_title = collection.title %}
-                  {% if product.vendor contains collection_title %}
-                    {{ collection.title  }}
+
                     {% if collection.title contains "Womenswear" %}
                       {% assign collection_menu = "Womenswear" %}
                     {% elsif collection.title contains "Menswear" %}
@@ -105,7 +104,7 @@
                     {% endif %}
                     {{ collection_menu }}as
                     {% assign vendor_collection_title = collection_title %}
-                  {% endif %}
+
 
                 {% endfor %}
               {% else %}
