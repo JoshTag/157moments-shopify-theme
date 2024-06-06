@@ -104,7 +104,20 @@
                       {% assign collection_menu = "Home" %}
                     {% endif %}
                     {{ collection_menu }}
-                    {% assign vendor_collection_title = collection_title %}
+                     {% for link in linklists.main-menu.links %}
+                  {% if link.title == collection_menu %}
+                    {% for child_link in link.links %}
+                        {% if child_link.links.size > 0 %}
+                          {% for grandchild_link in child_link.links %}
+                            {% if product.vendor contains grandchild_link.title %}
+                              {% assign vendor_collection_url = grandchild_link.url %}
+                              {% assign vendor_collection_title = grandchild_link.title %}
+                            {% endif %}
+                          {% endfor %}
+                        {% endif %}
+                    {% endfor %}
+                  {% endif %}
+                {% endfor %}
                   {% endif %}
 
                   
