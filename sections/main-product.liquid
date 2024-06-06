@@ -97,6 +97,7 @@
                 {% for collection in product.collections %}
                   {% assign collection_title = collection.title | remove: "- Womenswear" | remove: "- Menswear" %}
                   {% if product.vendor contains collection_title %}
+                    {{ collection.title  }}
                     {% if collection.title contains "Womenswear" %}
                       {% assign collection_menu = "Womenswear" %}
                     {% elsif collection.title contains "Menswear" %}
