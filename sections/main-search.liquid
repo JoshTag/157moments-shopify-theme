@@ -270,7 +270,7 @@
                 {%- assign counter = counter | plus: 1 -%}
                 <li class="bg-scheme-background text-scheme-text">
                   {% assign product = item %}
-                  {%- render 'product-grid-item',
+                  {%- render 'product-grid-item-search',
                     product: product,
                     section_color: 'primary',
                     products_per_row: 4,
