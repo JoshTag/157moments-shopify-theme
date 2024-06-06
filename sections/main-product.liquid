@@ -90,7 +90,8 @@
                   {% endfor %}
                 {% endfor %}
               {% endfor %}
-{{ collection_menu }}-1212
+
+              {% if collection_menu == blank %}123123{% endif %}
               {% for link in linklists.main-menu.links %}
                 {% if link.title == collection_menu %}
                   {% for child_link in link.links %}
