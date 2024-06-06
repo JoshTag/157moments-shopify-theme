@@ -16,7 +16,7 @@
         {%- endif -%}
       </h1>
     {%- when 'vendor' -%}
-    {{ request.path  }}
+    
       {% for item in linklists.main-menu.links %}
         {% for child_link in item.links %}
           {% if request.path contains child_link.url %}
