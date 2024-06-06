@@ -95,7 +95,7 @@
                 {% for collection in product.collections %}
                   {% assign collection_title = collection.title | remove: "- Womenswear" | remove: "- Menswear" %}
                   {% if product.vendor contains collection_title %}
-                    tets
+                    {% assign vendor_collection_title = collection_title %}
                   {% endif %}
                 {% endfor %}
               {% else %}
