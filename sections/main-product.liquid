@@ -98,8 +98,10 @@
                   {% if product.vendor contains collection_title %}
                     {% if collection.title contains "Womenswear" %}
                       {% assign collection_menu = "Womenswear" %}
-                    {% else %}
+                    {% elsif collection.title contains "Menswear" %}
                       {% assign collection_menu = "Menswear" %}
+                    {% else %}
+                      {% assign collection_menu = "Home" %}
                     {% endif %}
                     {{ collection_menu }}
                     {% assign vendor_collection_title = collection_title %}
