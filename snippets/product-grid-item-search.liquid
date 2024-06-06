@@ -137,21 +137,7 @@
 
       </div>
     </div>
-
-    
-     {% for item in linklists.main-menu.links %}
-        {% for child_link in item.links %}
-          {% if request.path contains child_link.url %}
-            {% assign collection_menu = item.title %}
-          {% endif %}
-          {% for grandchild_link in child_link.links %}
-            {% if request.path contains grandchild_link.url %}
-              {% assign collection_menu = item.title %}
-            {% endif %}
-          {% endfor %}
-        {% endfor %}
-      {% endfor %}
-
+  
       {% for link in linklists.main-menu.links %}
           {% for child_link in link.links %}
               {% if child_link.links.size > 0 %}
