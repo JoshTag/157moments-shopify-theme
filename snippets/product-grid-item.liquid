@@ -171,7 +171,7 @@
         {% if settings.product_grid_show_vendor and product.vendor != '' %}
           <p class="vendor mb-1 text-scheme-meta {% if sold_out %} line-through{% endif %}">{{vendor_collection_title}}</p>
         {% endif %}
-        <p  aria-hidden="true" class="product-grid-title {% if sold_out %}text-scheme-meta line-through{% endif %}">test{{ product.title }}</p>
+        <p  aria-hidden="true" class="product-grid-title {% if sold_out %}text-scheme-meta line-through{% endif %}">{{ product.title }}</p>
       </div>
       <div class="{{ price_class }}">
         {% if sold_out %}
