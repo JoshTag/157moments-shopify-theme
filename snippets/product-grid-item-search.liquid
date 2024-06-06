@@ -38,19 +38,7 @@
 
 <div class="group block h-full relative text-center type-product-grid-item {% unless settings.title_price_display == 'on_hover' %}hover:text-scheme-accent{% endunless %}" x-data="{ current_swatch_variant: '' }" data-color-scheme="{{ section_color }}">
   {% comment %}Hidden link for screen readers, see Debut{% endcomment %}
-        {% for link in linklists.main-menu.links %}
-          {% for child_link in link.links %}
-              {% if child_link.links.size > 0 %}
-                {% for grandchild_link in child_link.links %}
-                  {% if product.vendor contains grandchild_link.title %}
-                    {% assign vendor_collection_url = grandchild_link.url %}
-                    {% assign vendor_collection_title = grandchild_link.title %}
-                  {% endif %}
-                {% endfor %}
-              {% endif %}
-          {% endfor %}
-      {% endfor %}
-  <a href="{{ vendor_collection_url }}" class="increase-target"><span class="visually-hidden">{{ product.title }}</span></a>
+  <a href="{{ product.url | within: collection }}" class="increase-target"><span class="visually-hidden">{{ product.title }}</span></a>
   <div class="relative">
     {%- if show_sale_badge and on_sale -%}
       <div class="z-10 p-2  bg-scheme-accent text-scheme-text-overlay absolute {% if title_price_display == 'over_image_top' %}bottom-2{% else %}top-2{% endif %} right-2">On sale</div>
@@ -150,6 +138,18 @@
       </div>
     </div>
 
+      {% for link in linklists.main-menu.links %}
+          {% for child_link in link.links %}
+              {% if child_link.links.size > 0 %}
+                {% for grandchild_link in child_link.links %}
+                  {% if product.vendor contains grandchild_link.title %}
+                    {% assign vendor_collection_title = grandchild_link.title %}
+                  {% endif %}
+                {% endfor %}
+              {% endif %}
+          {% endfor %}
+      {% endfor %}
+    
     <div class="{% if settings.product_grid_uppercase %}uppercase{% endif %} {% if title_price_display == 'on_hover' or title_price_display contains 'over_image' %}absolute {% if settings.fill_image_to_border_edge %}{% if title_price_display == 'over_image_top' %}top-0{% else %}bottom-0{% endif %} left-0 right-0{% else %}left-4 right-4 {% if title_price_display == 'over_image_top' %}top-4{% else %}bottom-4{% endif %}{% endif %}{% endif %} {% if title_price_display == 'on_hover' %}product-grid__meta opacity-0 group-hover:opacity-100 {% if settings.fill_image_to_border_edge %}border-t-grid border-grid-color  bg-scheme-background {% endif %}  transition-opacity duration-200 ease-in-out text-scheme-text {% endif %} py-4 {% if reduce_gutter %}px-1 lg:px-2{% else %}section-x-padding{% endif %} justify-between {{ layout_class }}">
       <div class="{{ title_class }} break-words">
         {% if settings.product_grid_show_vendor and product.vendor != '' %}
