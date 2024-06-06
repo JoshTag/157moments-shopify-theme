@@ -153,6 +153,7 @@
       {% endfor %}
 
       {% for link in linklists.main-menu.links %}
+        {{ link.title }}
         {% if link.title == collection_menu %}
           {% for child_link in link.links %}
               {% if child_link.links.size > 0 %}
