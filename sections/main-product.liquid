@@ -93,7 +93,7 @@
 
               {% if collection_menu == blank %}
                 {% for collection in product.collections %}
-                    <p>{{ collection }}</p>
+                    <p>{{ collection.title }}</p>
                   {% if product.vendor contains collection_title %}
                     tets
                   {% endif %}
