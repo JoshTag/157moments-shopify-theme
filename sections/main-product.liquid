@@ -102,7 +102,7 @@
                     {% elsif collection.title contains "Home" %}
                       {% assign collection_menu = "Home" %}
                     {% endif %}
-                                    {% for link in linklists.main-menu.links %}
+                {% for link in linklists.main-menu.links %}
                   {% if link.title == collection_menu %}
                     {% for child_link in link.links %}
                         {% if child_link.links.size > 0 %}
@@ -138,7 +138,7 @@
             
                 <p {{ block.shopify_attributes }} class="vendor relative z-10 product-vendor-block text-base mt-4 text-scheme-meta">
                   <a class="text-base mt-4 text-scheme-meta" href="{{ vendor_collection_url }}">
-                    {{ vendor_collection_title }} // {{ product.vendor }}
+                    {{ vendor_collection_title }}
                   </a>
                 </p>
             {%- when 'description' -%}
