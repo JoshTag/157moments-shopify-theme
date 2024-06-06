@@ -112,6 +112,7 @@
                             {% if child_link.links.size > 0 %}
                               {% for grandchild_link in child_link.links %}
                                 {% if product.vendor contains grandchild_link.title %}
+                                  {{ product.vendor }}
                                   {% assign vendor_collection_url = grandchild_link.url %}
                                   {% assign vendor_collection_title = grandchild_link.title %}
                                 {% endif %}
