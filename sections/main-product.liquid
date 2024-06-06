@@ -101,9 +101,8 @@
                   endfor
                 -%} -->
                 {% for collection in product.collections %}
-                  {%  if product.vendor contains collection.title %}
-                    testestestset
-                  {% endif %}
+                  
+                  {{ collection.title }} -- {{ product.vendor }}
                 {% endfor %}
               {% else %}
                 {% for link in linklists.main-menu.links %}
