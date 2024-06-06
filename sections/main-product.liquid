@@ -92,7 +92,7 @@
               {% endfor %}
 
               {% if collection_menu == blank %}
-                {% assign vendor_collection_url = grandchild_link.url %}
+                {% assign vendor_collection_url = product.vendor | handle %}
                 {% assign vendor_collection_title = product.vendor %}
               {% else %}
                 {% for link in linklists.main-menu.links %}
