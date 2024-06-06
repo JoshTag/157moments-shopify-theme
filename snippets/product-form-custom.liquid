@@ -18,7 +18,6 @@
     {%- when 'vendor' -%}
       {% for item in linklists.main-menu.links %}
         {% for child_link in item.links %}
-          <h1>testet</h1>{{ child_link.url }}
           {% if request.path contains child_link.url %}
             {% assign collection_menu = item.title %}
           {% endif %}
