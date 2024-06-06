@@ -92,17 +92,10 @@
               {% endfor %}
 
               {% if collection_menu == blank %}
-                <!-- {%- liquid
-                  for collection in product.collections
-                  if collection.title == product.vendor
-                    assign vendor_collection = collection
-                    break
-                  endif
-                  endfor
-                -%} -->
                 {% for collection in product.collections %}
-                  
-                  {{ collection.title }}
+                  {% if product.vendor contains collection.title %}
+                    tets
+                  {% endif %}
                 {% endfor %}
               {% else %}
                 {% for link in linklists.main-menu.links %}
