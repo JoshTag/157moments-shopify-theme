@@ -93,10 +93,8 @@
 
               {% if collection_menu == blank %}
                 {% for collection in product.collections %}
-                  {{ product.vendor }}/vendor
                   {% assign collection_title = collection.title | remove: "- Womenswear" | remove: "- Menswear" %}
                   {% if product.vendor contains collection_title %}
-                    {{ collection.title }}//title
                     {% if collection.title contains "Womenswear" %}
                       {% assign collection_menu = "Womenswear" %}
                     {% elsif collection.title contains "Menswear" %}
@@ -104,7 +102,7 @@
                     {% elsif collection.title contains "Home" %}
                       {% assign collection_menu = "Home" %}
                     {% endif %}
-                    {{ collection_menu }}
+                    {{ collection_menu }}as
                     {% assign vendor_collection_title = collection_title %}
                   {% endif %}
 
