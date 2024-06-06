@@ -93,10 +93,18 @@
 
               {% if collection_menu == blank %}
                 {% for collection in product.collections %}
+                  
                   {% assign collection_title = collection.title | remove: "- Womenswear" | remove: "- Menswear" %}
                   {% if product.vendor contains collection_title %}
+                    {% if collection.title contains "Womenswear" %}
+                      {% assign collection_menu = "Womenswear" %}
+                    {% else %}
+                      {% assign collection_menu = "Menswear" %}
+                    {% endif %}
                     {% assign vendor_collection_title = collection_title %}
                   {% endif %}
+
+                  
                 {% endfor %}
               {% else %}
                 {% for link in linklists.main-menu.links %}
