@@ -38,7 +38,6 @@
 
     <div class="lg:col-span-12 section-x-padding py-2 bg-scheme-background text-scheme-text">
       <form action="{{ routes.search_url }}" method="get" class="input-group search" role="search">
-        <input type="hidden" name="type" value="product">
         <label for="search-{{ section.id }}" class="hidden">{{ 'general.search.placeholder' | t }}</label>
         <div class="flex items-center justify-between">
           <button class="py-2 mr-4"
@@ -46,6 +45,7 @@
             <span class="inline-block w-5 h-5">{%- render 'icon-search' -%}</span>
             <span class="visually-hidden">{{ 'general.search.submit' | t }}</span>
           </button>
+          <input type="hidden" name="type" value="product">
           <input autofocus id="search-{{ section.id }}" type="text" name="q" value="{{ search.terms | escape }}" placeholder="{{ 'general.search.placeholder' | t }}" class="placeholder-current font-body w-full block bg-transparent pb-1" aria-label="{{ 'general.search.placeholder' | t }}" data-search-input>
         </div>
       </form>
