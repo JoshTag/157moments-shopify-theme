@@ -112,7 +112,7 @@
                   <span class="visually-hidden">{{ 'cart.label.discounted_price' | t }}</span>
                   <div class="qb-price-item center-cart--absolute" data-id="{{ item.key }}">{{ item.price | money }}</div>
                   <span class="visually-hidden">{{ 'cart.label.original_price' | t }}</span>
-                  <s><div class="qb-price-item center-cart--absolute" data-id="{{ item.key }}">{{ item.original_price | money }}</div></s>
+                  <!-- <s><div class="qb-price-item center-cart--absolute" data-id="{{ item.key }}">{{ item.original_price | money }}</div></s> -->
                 {% else %}
                   <div class="qb-price-item center-cart--absolute" data-id="{{ item.key }}">{{ item.price | money }}</div>
                 {% endif %}
