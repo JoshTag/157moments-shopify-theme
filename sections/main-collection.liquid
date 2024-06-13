@@ -331,14 +331,15 @@
                                             {% assign filter_label = filter_value.label | replace: "/", " " %}
                                             {{ filter_label }}1
                                             {% if grandchild_link.title contains filter_label %}
-                                              {{ grandchild_link.title }}
+                                              {% assign filter_value_label = grandchild_link.title %}
+                                              <!-- {{ grandchild_link.title }} -->
                                             {% endif %}
                                           {% endfor %}
                                         {% endif %}
                                     {% endfor %}
                                   {% endif %}
                                 {% endfor %}
-                                =={{ filter_value.label }}
+                                =={{ filter_value_label }}
                               </label>
                             </li>
                           {%- endfor -%}
