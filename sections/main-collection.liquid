@@ -321,21 +321,21 @@
                                 {% if filter_value.active -%}checked{%- endif %}
                                 {% if filter_value.count == 0 and filter_value.active == false -%}disabled{%- endif %}
                               >
-                              {% for link in linklists.main-menu.links %}
-                                {% if link.title == collection_menu %}
-                                  {% for child_link in link.links %}
-                                      {% if child_link.links.size > 0 %}
-                                        {% for grandchild_link in child_link.links %}
-                                          <!-- {% if grandchild_link.title contains filter_value.label %} -->
-                                            {{ grandchild_link.title }}//{{ filter_value.label }}
-                                          <!-- {% endif %} -->
-                                        {% endfor %}
-                                      {% endif %}
-                                  {% endfor %}
-                                {% endif %}
-                              {% endfor %}
                               <label for="Filter-{{ filter.label }}-{{ forloop.index }}" class="cursor-pointer {% if settings.links_uppercase %}uppercase{% elsif section.settings.capitalize_filters %}capitalize{% endif %} flex items-center {% if filter_value.count == 0 and filter_value.active == false -%}text-scheme-meta line-through{%- else -%}hover:text-scheme-accent{%- endif %}" {% if filter_value.count == 0 and filter_value.active == false -%}disabled{% endif %}>
                                 <span class="w-2 h-2 mr-1 inline-block rounded-full border-checkbox border-current"></span>
+                                {% for link in linklists.main-menu.links %}
+                                  {% if link.title == collection_menu %}
+                                    {% for child_link in link.links %}
+                                        {% if child_link.links.size > 0 %}
+                                          {% for grandchild_link in child_link.links %}
+                                            <!-- {% if grandchild_link.title contains filter_value.label %} -->
+                                              {{ grandchild_link.title }}//{{ filter_value.label }}
+                                            <!-- {% endif %} -->
+                                          {% endfor %}
+                                        {% endif %}
+                                    {% endfor %}
+                                  {% endif %}
+                                {% endfor %}
                                 //{{ filter_value.label }}-
                               </label>
                             </li>
