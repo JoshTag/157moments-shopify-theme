@@ -328,18 +328,17 @@
                                     {% for child_link in link.links %}
                                         {% if child_link.links.size > 0 %}
                                           {% for grandchild_link in child_link.links %}
-                                            {% assign filter_label = filter_value.label | replace: "/", " " %}
-                                            {{ filter_label }}1
-                                            {% if grandchild_link.title contains filter_label %}
-                                              {% assign filter_value_label = grandchild_link.title %}
-                                              <!-- {{ grandchild_link.title }} -->
-                                            {% endif %}
+                                            <!-- {% assign filter_label = filter_value.label | replace: "/", " " %}
+                                            {{ filter_label }} -->
+                                            <!-- {% if grandchild_link.title contains filter_label %} -->
+                                              {{ grandchild_link.title }}
+                                            <!-- {% endif %} -->
                                           {% endfor %}
                                         {% endif %}
                                     {% endfor %}
                                   {% endif %}
                                 {% endfor %}
-                                =={{ filter_value_label }}
+                                =={{ filter_value.label }}
                               </label>
                             </li>
                           {%- endfor -%}
