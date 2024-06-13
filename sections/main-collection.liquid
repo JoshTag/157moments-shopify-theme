@@ -329,8 +329,9 @@
                                         {% if child_link.links.size > 0 %}
                                           {% for grandchild_link in child_link.links %}
                                             {% assign filter_label = filter_value.label | replace: "/", " " %}
+                                            {{ filter_label }}
                                             {% if grandchild_link.title contains filter_label %}
-                                              {{ grandchild_link.title }}//{{ filter_value.label }}
+                                              {{ grandchild_link.title }}
                                             {% endif %}
                                           {% endfor %}
                                         {% endif %}
