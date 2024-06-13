@@ -326,7 +326,9 @@
                                   {% for child_link in link.links %}
                                       {% if child_link.links.size > 0 %}
                                         {% for grandchild_link in child_link.links %}
-                                         {{ grandchild_link.title }}//
+                                          {% if grandchild_link.title contains filter_value.label %}
+                                            {{ grandchild_link.title }}
+                                          {% endif %}
                                         {% endfor %}
                                       {% endif %}
                                   {% endfor %}
