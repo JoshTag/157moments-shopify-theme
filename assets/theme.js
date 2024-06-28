@@ -14338,6 +14338,7 @@ function variantLiveRegion(variant) {
         loading: true,
         updating: false,
         noteUpdating: false,
+        errorMessages: {},
         getSizedImageUrl: theme_images_getSizedImageUrl,
         mounted: function mounted() {
           var _this = this;
@@ -14390,7 +14391,7 @@ function variantLiveRegion(variant) {
             // Ignore properties that start with
             // an underscore as they are considered
             // 'private' by Shopify
-            if (propKey.charAt(0) === '_') continue;
+            if (propKey.charAt(0) === '_' || !properties[propKey].trim()) continue;
             var propObj = {};
             propObj['name'] = propKey;
             propObj['value'] = properties[propKey];
@@ -14435,6 +14436,7 @@ function variantLiveRegion(variant) {
           this.updating = true;
           this.rowUpdating = true;
           item.updating = true;
+          delete this.errorMessages[item.key];
           updateItem(item.key, {
             quantity: item.quantity
           }).then(function (state) {
@@ -14445,8 +14447,9 @@ function variantLiveRegion(variant) {
             if (newItem) {
               cartLiveRegion(newItem, false); //if newItem quantity is less than requested quantity, alert error
 
-              if (item.quantity > newItem.quantity) {
-                alert(window.theme.strings.cartAddError.replace('{{ title }}', newItem.title));
+              if (state.item_count === _this3.state.item_count) {
+                // Legacy quantity code
+                _this3.errorMessages[item.key] = window.theme.strings.cartAddError.replace('{{ title }}', newItem.title);
               }
             } else {
               if (item.quantity === 0) {
@@ -14457,8 +14460,18 @@ function variantLiveRegion(variant) {
                 }, 100);
               }
             }
-
             _this3.state = state;
+          }).catch(error => {
+            error.json().then(errorData => {
+              if (errorData.status === 422) {
+                this.errorMessages[item.key] = errorData.message;
+                item.quantity = lastQuantity;
+              }
+
+              this.updating = false;
+              this.rowUpdating = false;
+              item.updating = false;
+            });
           });
         },
         updateNote: function updateNote($event) {
