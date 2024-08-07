@@ -1,6 +1,6 @@
 
 
-<div class="section-x-padding py-theme max-w-md mx-auto" x-data="BaselineLogin()" x-init="mounted()">
+<div class="section-x-padding py-theme max-w-md mx-auto" style="height: calc(100vh - 376px);" x-data="BaselineLogin()" x-init="mounted()">
   <h1 class="font-heading text-2xl mb-2">{{ 'customer.register.title' | t }}</h1>
 
   {%- assign formId = 'RegisterForm' -%}
@@ -48,7 +48,7 @@
       id="CreatePassword">
 
     <div class="mt-4">
-      <input type="submit" value="{{ 'customer.register.submit' | t }}" class="button">
+      <input type="submit" style="width: 100%;" value="{{ 'customer.register.submit' | t }}" class="button">
     </div>
 
     <div class="mt-8 md:flex md:justify-between">
