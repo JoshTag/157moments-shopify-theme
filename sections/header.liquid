@@ -107,11 +107,20 @@
   {%- unless layout contains 'spread' -%}
     <ul class="flex flex-wrap self-stretch items-stretch {{ list_classes }}">
   {%- endunless -%}
+    {%- liquid
+      for link in linklists[section.settings.menu].links
+        assign menuLength = forloop.length
+        assign lengthMinusOne = menuLength | minus: 1
+        if forloop.index == lengthMinusOne
+          assign secondLastLinkTitle = link.title | capitalize
+        endif
+      endfor
+    -%}
     {%- for link in linklists[section.settings.menu].links -%}
       {%- assign child_menu = '' -%}
       {%- assign grandchild_menu = '' -%}
       {%- if link.links != blank -%}
-        {% if link.title == "Womenswear" or link.title == "Menswear" or link.title == "Home" %}
+        {% if link.title == "Womenswear" or link.title == "Menswear" or link.title == secondLastLinkTitle %}
           {%- unless layout contains 'spread' -%}
             <li class="inline-flex flex items-stretch {{ item_classes }}">
           {%- endunless -%}

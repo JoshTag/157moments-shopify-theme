@@ -1,5 +1,15 @@
 {% assign currentcollection = collection.url | remove: "/collections/" %}
 
+{%- liquid
+for link in linklists[section.settings.menu].links
+  assign menuLength = forloop.length
+  assign lengthMinusOne = menuLength | minus: 1
+  if forloop.index == lengthMinusOne
+    assign secondLastLinkTitle = link.title | capitalize
+  endif
+endfor
+-%}
+
 {% capture menuitemsMenswear %}
 {% for link in linklists.main-menu.links %}
   {% if link.title == "Menswear" %}
@@ -40,7 +50,7 @@
 
 {% capture menuitemsHome %}
 {% for link in linklists.main-menu.links %}
-  {% if link.title == "Home" %}
+  {% if link.title == secondLastLinkTitle %}
     {% for child_link in link.links %}
       {% if child_link.links.size == 0 %}
         {% assign menuItemName = child_link.url | remove: "/collections/" | split: ' ' %}
@@ -68,7 +78,7 @@
       menu-item--active-underline
       {% endif %}
     {% elsif menuitemsHome contains currentcollection %}
-      {% if title == "Home" %}
+      {% if title == secondLastLinkTitle %}
       menu-item--active-underline
       {% endif %}
     {% endif %}
