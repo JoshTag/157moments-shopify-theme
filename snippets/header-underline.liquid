@@ -1,7 +1,7 @@
 {% assign currentcollection = collection.url | remove: "/collections/" %}
 
 {%- liquid
-for link in linklists[section.settings.menu].links
+for link in linklists.main-menu.links
   assign menuLength = forloop.length
   assign lengthMinusOne = menuLength | minus: 1
   if forloop.index == lengthMinusOne
