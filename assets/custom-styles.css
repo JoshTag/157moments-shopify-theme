@@ -19,11 +19,11 @@
   }
 
   .collection-page__menu-list {
-    margin-bottom: 20px;
+    margin-bottom: 0px;
   }
 
   .collection-page__menu > .collection-page__menu-list:not(:first-child):not(:nth-child(2)) {
-    margin-bottom: 0px;
+    margin-bottom: 20px;
   }
 
   .collection-page__menu > .collection-page__menu-list:nth-child(-n + 2) > li:not(:first-child) {
