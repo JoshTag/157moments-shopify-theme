@@ -6,22 +6,22 @@
         "section_id": "pf-cfd775d3"
       }
     },
-    "pagefly_section_e8r7th": {
+    "pagefly_section_Yx3B8y": {
       "type": "pagefly-section",
       "settings": {
-        "section_id": "pf-5606f203"
+        "section_id": "pf-5b361892"
       }
     },
-    "pagefly_section_NpKQnf": {
+    "pagefly_section_Aj9jPi": {
       "type": "pagefly-section",
       "settings": {
-        "section_id": "pf-3aabb8c7"
+        "section_id": "pf-2a0b33d6"
       }
     }
   },
   "order": [
     "pagefly_section_m47dNP",
-    "pagefly_section_e8r7th",
-    "pagefly_section_NpKQnf"
+    "pagefly_section_Yx3B8y",
+    "pagefly_section_Aj9jPi"
   ]
 }
